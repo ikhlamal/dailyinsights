@@ -84,3 +84,11 @@ for i in range(1, 4):
         resized_img = resize_image(img)
         st.image(resized_img, use_column_width=True)
         st.write(summaries[i])
+        col1, col2 = st.columns([1, 3])
+        with col1:
+            if sentiment[i] == "Netral":
+                st.info(sentiment[i])
+            elif sentiment[i] == "Negatif":
+                st.warning(sentiment[i])
+            elif sentiment[i] == "Positif":
+                st.success(sentiment[i])
