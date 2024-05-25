@@ -76,7 +76,7 @@ with col2:
         if sentiment[0] == "Netral":
             st.info(sentiment[0])
         elif sentiment[0] == "Negatif":
-            st.warning(sentiment[0])
+            st.error(sentiment[0])
         elif sentiment[0] == "Positif":
             st.success(sentiment[0])
 
@@ -91,6 +91,6 @@ for i in range(1, 4):
         if sentiment[i] == "Netral":
             st.info(sentiment[i])
         elif sentiment[i] == "Negatif":
-            st.warning(sentiment[i])
+            st.error(sentiment[i])
         elif sentiment[i] == "Positif":
             st.success(sentiment[i])
