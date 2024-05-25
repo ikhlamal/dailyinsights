@@ -35,7 +35,7 @@ def resize_image(img, target_ratio=(3, 2)):
 title = [
     "DPD PDIP Sebut Ahok Siap Maju di Pilgub Sumut 2024",
     "PDI-P Sebut Ahok Siap Maju Pilgub Sumut, Jadi Penantang Bobby",
-    "Masuk Bursa Cagub Sumut, Ahok Tunggu Penugasan PDIP",
+    "Masuk Bursa Cagub Sumut, Ahok Tunggu Penugasan PDIP\n",
     "Ahok Tunggu Tugas dari Partai Usai Disebut DPD PDIP Siap Maju Pilgub Sumut"
 ]
 
