@@ -3,6 +3,8 @@ from PIL import Image
 import requests
 from io import BytesIO
 
+st.set_page_config(layout="wide")
+
 def load_image(url):
     response = requests.get(url)
     img = Image.open(BytesIO(response.content))
