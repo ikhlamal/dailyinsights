@@ -8,7 +8,6 @@ def load_image(url):
     img = Image.open(BytesIO(response.content))
     return img
 
-
 def resize_image(img, target_ratio=(3, 2)):
     img_ratio = img.width / img.height
     target_ratio = target_ratio[0] / target_ratio[1]
@@ -69,7 +68,7 @@ with col1:
     st.image(resized_img, use_column_width=True)
 
 with col2:
-    st.subheader(title[0])
+    st.write(title[0])
     st.write(summaries[0])
     col1, col2 = st.columns([1, 3])
     with col1:
