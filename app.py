@@ -65,12 +65,14 @@ with col1:
 
 with col2:
     st.write(summaries[0])
-    if sentiment[0] == "Netral":
-        st.info(sentiment[0])
-    elif sentiment[0] == "Negatif":
-        st.warning(sentiment[0])
-    elif sentiment[0] == "Positif":
-        st.success(sentiment[0])
+    col1, col2 = st.columns([1, 3])
+    with col1:
+        if sentiment[0] == "Netral":
+            st.info(sentiment[0])
+        elif sentiment[0] == "Negatif":
+            st.warning(sentiment[0])
+        elif sentiment[0] == "Positif":
+            st.success(sentiment[0])
 
 # Berita tambahan
 st.subheader("Berita Lainnya")
