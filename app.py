@@ -33,11 +33,18 @@ def resize_image(img, target_ratio=(3, 2)):
     return img
 
 # URL gambar dan teks summary
+title = [
+    "DPD PDIP Sebut Ahok Siap Maju di Pilgub Sumut 2024",
+    "PDI-P Sebut Ahok Siap Maju Pilgub Sumut, Jadi Penantang Bobby",
+    "Masuk Bursa Cagub Sumut, Ahok Tunggu Penugasan PDIP",
+    "Ahok Tunggu Tugas dari Partai Usai Disebut DPD PDIP Siap Maju Pilgub Sumut"
+]
+
 image_urls = [
     "https://akcdn.detik.net.id/visual/2019/02/08/08e695e3-e6fc-4de8-b200-38bbf1a4d618_169.jpeg?w=650&q=90",
     "https://asset.kompas.com/crops/9yieMQZ2-cwuQWaPTXrs5QqS9BA=/0x0:998x665/750x500/data/photo/2024/02/04/65bf65a465848.jpg",
     "https://akcdn.detik.net.id/visual/2024/02/08/kader-pdi-p-basuki-tjahja-purnama-alias-ahok-1_169.jpeg?w=650&q=90",
-    "https://cdnv.detik.com/videoservice/AdminTV/2024/05/25/59a36e70287f4204b14a6ce9667dd872-20240525130450-0s.jpg?w=650&q=80"
+    "https://akcdn.detik.net.id/community/media/visual/2024/01/10/respons-ahok-soal-jokowi-absen-di-hut-pdip_169.png?w=700&q=90"
 ]
 
 summaries = [
@@ -62,6 +69,7 @@ with col1:
     st.image(resized_img, use_column_width=True)
 
 with col2:
+    st.subheader(title[0])
     st.write(summaries[0])
     col1, col2 = st.columns([1, 3])
     with col1:
@@ -78,6 +86,7 @@ for i in range(1, 4):
         img = load_image(image_urls[i])
         resized_img = resize_image(img)
         st.image(resized_img, use_column_width=True)
+        st.subheader(title[i])
         st.write(summaries[i])
         if sentiment[i] == "Netral":
             st.info(sentiment[i])
