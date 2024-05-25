@@ -36,16 +36,8 @@ with col2:
 # Berita tambahan
 st.subheader("Berita Lainnya")
 
+cols = st.columns(3)
 for i in range(1, 4):
-    col1, col2 = st.columns([1, 3])
-    
-    with col1:
+    with cols[i-1]:
         st.image(load_image(image_urls[i]), use_column_width=True)
-    
-    with col2:
         st.write(summaries[i])
-    st.write("")  # Menambahkan jarak antar berita
-
-# Menjalankan aplikasi Streamlit
-if __name__ == "__main__":
-    st.run()
