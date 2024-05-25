@@ -10,7 +10,7 @@ def load_image(url):
 
 # URL gambar dan teks summary
 image_urls = [
-    "https://example.com/image1.jpg",
+    "https://assets-global.website-files.com/659c117df71d5be8c2a540f6/6651b7a78f7dc11bf61f69c1_aleix-espargaro_169.jpeg",
     "https://example.com/image2.jpg",
     "https://example.com/image3.jpg",
     "https://example.com/image4.jpg"
