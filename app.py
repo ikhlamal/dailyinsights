@@ -49,14 +49,14 @@ image_urls = [
 summaries = [
     "Ini adalah ringkasan berita pertama.",
     "Ini adalah ringkasan berita kedua.",
-    "Ini adalah ringkasan berita ketiga.",
+    "Ahok menyatakan terima kasih atas masuknya namanya sebagai calon gubernur di Sumut, namun mengingatkan bahwa keputusan akhir ada di tangan partai. Ahok menunggu penugasan dari PDIP setelah namanya masuk dalam bursa calon gubernur, serta berkomunikasi dengan pengurus DPD Sumut. Pada Rakernas PDIP, selain membahas Pilkada, juga dibahas strategi politik termasuk sikap partai di pemerintahan mendatang.",
     "Ini adalah ringkasan berita keempat."
 ]
 
 sentiment = [
     "Netral",
     "Positif",
-    "Negatif",
+    "Netral",
     "Positif"
 ]
 
