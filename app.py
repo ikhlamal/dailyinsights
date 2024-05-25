@@ -8,6 +8,30 @@ def load_image(url):
     img = Image.open(BytesIO(response.content))
     return img
 
+
+def resize_image(img, target_ratio=(3, 2)):
+    img_ratio = img.width / img.height
+    target_ratio = target_ratio[0] / target_ratio[1]
+    
+    if img_ratio > target_ratio:
+        # Crop the width
+        new_width = int(target_ratio * img.height)
+        left = (img.width - new_width) / 2
+        right = (img.width + new_width) / 2
+        top = 0
+        bottom = img.height
+        img = img.crop((left, top, right, bottom))
+    else:
+        # Crop the height
+        new_height = int(img.width / target_ratio)
+        left = 0
+        right = img.width
+        top = (img.height - new_height) / 2
+        bottom = (img.height + new_height) / 2
+        img = img.crop((left, top, right, bottom))
+    
+    return img
+
 # URL gambar dan teks summary
 image_urls = [
     "https://akcdn.detik.net.id/visual/2019/02/08/08e695e3-e6fc-4de8-b200-38bbf1a4d618_169.jpeg?w=650&q=90",
@@ -28,7 +52,9 @@ st.subheader("Berita Utama")
 col1, col2 = st.columns([1, 3])
 
 with col1:
-    st.image(load_image(image_urls[0]), use_column_width=True)
+    img = load_image(image_urls[0])
+    resized_img = resize_image(img)
+    st.image(resized_img, use_column_width=True)
 
 with col2:
     st.write(summaries[0])
