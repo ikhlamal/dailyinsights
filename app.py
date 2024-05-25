@@ -47,6 +47,13 @@ summaries = [
     "Ini adalah ringkasan berita keempat."
 ]
 
+sentiment = [
+    "Netral",
+    "Positif",
+    "Negatif",
+    "Positif"
+]
+
 # Berita utama
 st.subheader("Berita Utama")
 col1, col2 = st.columns([2, 3])
@@ -58,6 +65,12 @@ with col1:
 
 with col2:
     st.write(summaries[0])
+    if sentiment == "Netral":
+        st.info(sentiment[0])
+    elif sentiment == "Negatif":
+        st.warning(sentiment[0])
+    elif sentiment == "Positif":
+        st.success(sentiment[0])
 
 # Berita tambahan
 st.subheader("Berita Lainnya")
