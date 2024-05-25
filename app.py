@@ -86,7 +86,7 @@ for i in range(1, 4):
         img = load_image(image_urls[i])
         resized_img = resize_image(img)
         st.image(resized_img, use_column_width=True)
-        st.subheader(title[i])
+        st.write(title[i])
         st.write(summaries[i])
         if sentiment[i] == "Netral":
             st.info(sentiment[i])
