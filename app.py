@@ -65,5 +65,7 @@ st.subheader("Berita Lainnya")
 cols = st.columns(3)
 for i in range(1, 4):
     with cols[i-1]:
-        st.image(load_image(image_urls[i]), use_column_width=True)
+        img = load_image(image_urls[i])
+        resized_img = resize_image(img)
+        st.image(resized_img, use_column_width=True)
         st.write(summaries[i])
