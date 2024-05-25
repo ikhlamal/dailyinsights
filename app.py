@@ -54,8 +54,6 @@ sentiment = [
     "Positif"
 ]
 
-# Berita utama
-st.subheader("Berita Utama")
 col1, col2 = st.columns([2, 3])
 
 with col1:
@@ -73,9 +71,6 @@ with col2:
             st.warning(sentiment[0])
         elif sentiment[0] == "Positif":
             st.success(sentiment[0])
-
-# Berita tambahan
-st.subheader("Berita Lainnya")
 
 cols = st.columns(3)
 for i in range(1, 4):
