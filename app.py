@@ -69,7 +69,8 @@ with col1:
 
 with col2:
     st.write(title[0])
-    st.write(summaries[0])
+    with st.container(border=True):
+        st.write(summaries[0])
     col1, col2 = st.columns([1, 3])
     with col1:
         if sentiment[0] == "Netral":
@@ -86,7 +87,8 @@ for i in range(1, 4):
         resized_img = resize_image(img)
         st.image(resized_img, use_column_width=True)
         st.write(title[i])
-        st.write(summaries[i])
+        with st.container(border=True):
+            st.write(summaries[i])
         if sentiment[i] == "Netral":
             st.info(sentiment[i])
         elif sentiment[i] == "Negatif":
