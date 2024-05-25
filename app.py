@@ -49,7 +49,7 @@ summaries = [
 
 # Berita utama
 st.subheader("Berita Utama")
-col1, col2 = st.columns([1, 3])
+col1, col2 = st.columns([3, 1])
 
 with col1:
     img = load_image(image_urls[0])
