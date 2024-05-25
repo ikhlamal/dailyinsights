@@ -36,9 +36,9 @@ def resize_image(img, target_ratio=(3, 2)):
 # URL gambar dan teks summary
 title = [
     "DPD PDIP Sebut Ahok Siap Maju di Pilgub Sumut 2024",
-    "PDI-P Sebut Ahok Siap Maju Pilgub Sumut, Jadi Penantang...",
+    "PDI-P Sebut Ahok Siap Maju Pilgub Sumut, Jadi Penantang Bobby",
     "Masuk Bursa Cagub Sumut, Ahok Tunggu Penugasan PDIP",
-    "Ahok Tunggu Tugas dari Partai Usai Disebut DPD PDIP Siap..."
+    "Ahok Tunggu Tugas dari Partai Usai Disebut DPD PDIP Siap Maju Pilgub Sumut"
 ]
 
 image_urls = [
@@ -49,17 +49,17 @@ image_urls = [
 ]
 
 summaries = [
-    "Ini adalah ringkasan berita pertama.",
-    "Ini adalah ringkasan berita kedua.",
+    "Ketua DPD PDIP Sumatera Utara, Rapidin Simbolon, mengungkapkan bahwa Ahok siap maju di Pilgub Sumut 2024. Nama-nama calon kuat lainnya yang tengah dipertimbangkan oleh DPD PDIP Sumut adalah Niksok Nababan, Eddy Rahmayadi, dan Musa Rajekshah alias Ijeck. Proses penjaringan dan pemilihan calon Pilgub Sumut oleh DPD PDIP Sumut masih dalam tahap pembahasan dan akan diputuskan di tingkat pusat.",
+    "Ketua DPD PDI-P Sumatera Utara menyatakan bahwa Ahok siap maju sebagai calon gubernur di Pilkada Sumatera Utara 2024. Ahok dimunculkan sebagai penantang dari Bobby Nasution, yang didukung oleh Partai Gerindra. PDI-P membuka kerja sama dengan berbagai partai politik dan masih mempertimbangkan tokoh lain selain Ahok untuk diusung dalam Pilkada Sumut.",
     "Ahok menyatakan terima kasih atas masuknya namanya sebagai calon gubernur di Sumut, namun mengingatkan bahwa keputusan akhir ada di tangan partai. Ahok menunggu penugasan dari PDIP setelah namanya masuk dalam bursa calon gubernur, serta berkomunikasi dengan pengurus DPD Sumut. Pada Rakernas PDIP, selain membahas Pilkada, juga dibahas strategi politik termasuk sikap partai di pemerintahan mendatang.",
-    "Ini adalah ringkasan berita keempat."
+    "Basuki Tjahaja Purnama alias Ahok siap maju dalam Pilgub Sumut 2024 setelah mendapat dorongan dari DPD PDIP Sumut. Ahok akan menyerahkan langkah politiknya di Pilkada 2024 pada keputusan partai dan siap menunggu tugas dari partai. DPD PDIP Sumut selalu mempertimbangkan nama Ahok dalam Pilgub Sumut dan akan menyempurnakan keputusan sesuai dinamika politik."
 ]
 
 sentiment = [
     "Netral",
     "Positif",
     "Netral",
-    "Positif"
+    "Netral"
 ]
 
 col1, col2 = st.columns([2, 3])
