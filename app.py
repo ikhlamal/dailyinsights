@@ -57,41 +57,41 @@ sentiment = [
     "Negatif",
     "Negatif",
 ]
-
-st.subheader("Israel Terus Berusaha Mengalahkan Hamas di Gaza Meskipun Menimbulkan Banyak Korban")
-
-col1, col2 = st.columns([2, 3])
-
-with col1:
-    img = load_image(image_urls[0])
-    resized_img = resize_image(img)
-    st.image(resized_img, use_column_width=True)
-
-with col2:
-    st.write(title[0])
+with st.container(border=True):
+    st.subheader("Israel Terus Berusaha Mengalahkan Hamas di Gaza Meskipun Menimbulkan Banyak Korban")
     with st.container(border=True):
-        st.write(summaries[0])
-    col1, col2 = st.columns([1, 3])
-    with col1:
-        if sentiment[0] == "Netral":
-            st.info(sentiment[0])
-        elif sentiment[0] == "Negatif":
-            st.error(sentiment[0])
-        elif sentiment[0] == "Positif":
-            st.success(sentiment[0])
-
-cols = st.columns(2)
-for i in range(1, 3):
-    with cols[i-1]:
-        img = load_image(image_urls[i])
-        resized_img = resize_image(img)
-        st.image(resized_img, use_column_width=True)
-        st.write(title[i])
-        with st.container(border=True):
-            st.write(summaries[i])
-        if sentiment[i] == "Netral":
-            st.info(sentiment[i])
-        elif sentiment[i] == "Negatif":
-            st.error(sentiment[i])
-        elif sentiment[i] == "Positif":
-            st.success(sentiment[i])
+        col1, col2 = st.columns([2, 3])
+        
+        with col1:
+            img = load_image(image_urls[0])
+            resized_img = resize_image(img)
+            st.image(resized_img, use_column_width=True)
+        
+        with col2:
+            st.write(title[0])
+            with st.container(border=True):
+                st.write(summaries[0])
+            col1, col2 = st.columns([1, 3])
+            with col1:
+                if sentiment[0] == "Netral":
+                    st.info(sentiment[0])
+                elif sentiment[0] == "Negatif":
+                    st.error(sentiment[0])
+                elif sentiment[0] == "Positif":
+                    st.success(sentiment[0])
+        
+        cols = st.columns(2)
+        for i in range(1, 3):
+            with cols[i-1]:
+                img = load_image(image_urls[i])
+                resized_img = resize_image(img)
+                st.image(resized_img, use_column_width=True)
+                st.write(title[i])
+                with st.container(border=True):
+                    st.write(summaries[i])
+                if sentiment[i] == "Netral":
+                    st.info(sentiment[i])
+                elif sentiment[i] == "Negatif":
+                    st.error(sentiment[i])
+                elif sentiment[i] == "Positif":
+                    st.success(sentiment[i])
