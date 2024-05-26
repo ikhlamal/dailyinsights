@@ -55,21 +55,24 @@ news_data = {
     },
     "Berita 2": {
         "title": [
-            "**Judul Berita 2-1**",
-            "**Judul Berita 2-2**",
-            "**Judul Berita 2-3**",
+            "**DPD PDIP Sebut Ahok Siap Maju di Pilgub Sumut 2024 (CNN Indonesia)**",
+            "**PDI-P Sebut Ahok Siap Maju Pilgub Sumut, Jadi Penantang Bobby (Kompas)**",
+            "**Masuk Bursa Cagub Sumut, Ahok Tunggu Penugasan PDIP (CNN Indonesia)**",
+            "**Ahok Tunggu Tugas dari Partai Usai Disebut DPD PDIP Siap Maju Pilgub Sumut (Detik)**"
         ],
         "image_urls": [
-            "https://example.com/image2-1.jpg",
-            "https://example.com/image2-2.jpg",
-            "https://example.com/image2-3.jpg",
+            "https://akcdn.detik.net.id/visual/2019/02/08/08e695e3-e6fc-4de8-b200-38bbf1a4d618_169.jpeg?w=650&q=90",
+            "https://asset.kompas.com/crops/9yieMQZ2-cwuQWaPTXrs5QqS9BA=/0x0:998x665/750x500/data/photo/2024/02/04/65bf65a465848.jpg",
+            "https://akcdn.detik.net.id/visual/2024/02/08/kader-pdi-p-basuki-tjahja-purnama-alias-ahok-1_169.jpeg?w=650&q=90",
+            "https://akcdn.detik.net.id/community/media/visual/2024/01/10/respons-ahok-soal-jokowi-absen-di-hut-pdip_169.png?w=700&q=90"
         ],
         "summaries": [
-            "Ringkasan berita 2-1.",
-            "Ringkasan berita 2-2.",
-            "Ringkasan berita 2-3.",
+            "Ketua DPD PDIP Sumatera Utara, Rapidin Simbolon, mengungkapkan bahwa Ahok siap maju di Pilgub Sumut 2024. Nama-nama calon kuat lainnya yang tengah dipertimbangkan oleh DPD PDIP Sumut adalah Niksok Nababan, Eddy Rahmayadi, dan Musa Rajekshah alias Ijeck. Proses penjaringan dan pemilihan calon Pilgub Sumut oleh DPD PDIP Sumut masih dalam tahap pembahasan dan akan diputuskan di tingkat pusat.",
+            "Ketua DPD PDI-P Sumatera Utara menyatakan bahwa Ahok siap maju sebagai calon gubernur di Pilkada Sumatera Utara 2024. Ahok dimunculkan sebagai penantang dari Bobby Nasution, yang didukung oleh Partai Gerindra. PDI-P membuka kerja sama dengan berbagai partai politik dan masih mempertimbangkan tokoh lain selain Ahok untuk diusung dalam Pilkada Sumut.",
+            "Ahok menyatakan terima kasih atas masuknya namanya sebagai calon gubernur di Sumut, namun mengingatkan bahwa keputusan akhir ada di tangan partai. Ahok menunggu penugasan dari PDIP setelah namanya masuk dalam bursa calon gubernur, serta berkomunikasi dengan pengurus DPD Sumut. Pada Rakernas PDIP, selain membahas Pilkada, juga dibahas strategi politik termasuk sikap partai di pemerintahan mendatang.",
+            "Basuki Tjahaja Purnama alias Ahok siap maju dalam Pilgub Sumut 2024 setelah mendapat dorongan dari DPD PDIP Sumut. Ahok akan menyerahkan langkah politiknya di Pilkada 2024 pada keputusan partai dan siap menunggu tugas dari partai. DPD PDIP Sumut selalu mempertimbangkan nama Ahok dalam Pilgub Sumut dan akan menyempurnakan keputusan sesuai dinamika politik."
         ],
-        "sentiment": ["Positif", "Netral", "Negatif"],
+        "sentiment": ["Netral", "Positif", "Netral", "Netral"],
     }
 }
 
@@ -82,6 +85,8 @@ news = news_data[selected_news]
 with st.container(border=True):
     if selected_news == "Berita 1":
         st.subheader("Israel Terus Berusaha Mengalahkan Hamas di Gaza Meskipun Menimbulkan Banyak Korban")
+    if selected_news == "Berita 2":
+        st.subheader("Ahok Siap Maju Sebagai Calon Gubernur Sumatera Utara 2024")
     
     with st.container(border=True):
         col1, col2 = st.columns([2, 3])
@@ -121,3 +126,7 @@ with st.container(border=True):
     if selected_news == "Berita 1":
         with st.container(border=True):
             st.write("**Poin penting yang menjadi titik fokus dari ketiga portal berita tersebut adalah situasi konflik di Gaza antara Israel dan Hamas yang berlangsung dengan intensitas tinggi. Namun, terdapat perbedaan pemberitaan antara ketiga portal berita tersebut dalam hal fokus dan sudut pandangnya. CNN lebih menekankan pada jumlah korban jiwa dan situasi kemanusiaan yang memburuk di Gaza, Associated Press lebih fokus pada perlawanan Hamas dan tantangan yang dihadapi oleh Israel dalam menaklukkan mereka, sedangkan Al Jazeera lebih menyoroti tindakan Israel yang terus melakukan serangan meskipun diperintahkan untuk menghentikan operasi militer di Gaza oleh Pengadilan Internasional.**")
+    if selected_news == "Berita 2":
+        with st.container(border=True):
+            st.write("**Poin penting dari keempat ringkasan berita di atas adalah bahwa Basuki Tjahaja Purnama (Ahok) siap maju sebagai calon gubernur di Pilkada Sumatera Utara 2024. Namun, terdapat perbedaan dalam penekanan antara portal berita tersebut. CNN Indonesia dan Detik menyoroti bahwa Ahok mendapat dukungan dari DPD PDIP Sumut dan siap menunggu tugas dari partai, sementara Kompas menyoroti bahwa Ahok akan menjadi penantang dari Bobby Nasution yang didukung oleh Partai Gerindra. PDI-P masih mempertimbangkan tokoh lain selain Ahok untuk diusung dalam Pilkada Sumut. Di sisi lain, CNN Indonesia juga menekankan bahwa keputusan akhir ada di tangan partai, sementara Detik menyoroti bahwa DPD PDIP Sumut selalu mempertimbangkan nama Ahok dalam Pilgub Sumut dan akan menyempurnakan keputusan sesuai dinamika politik.***")
+    
