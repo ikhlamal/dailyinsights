@@ -79,7 +79,7 @@ selected_news = st.selectbox("Pilih Berita", list(news_data.keys()))
 # Mendapatkan data berita terpilih
 news = news_data[selected_news]
 
-with st.container:
+with st.container(border=True):
     if selected_news == "Berita 1":
         st.subheader("Israel Terus Berusaha Mengalahkan Hamas di Gaza Meskipun Menimbulkan Banyak Korban")
     
