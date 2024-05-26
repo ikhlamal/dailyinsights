@@ -35,9 +35,9 @@ def resize_image(img, target_ratio=(3, 2)):
 
 # URL gambar dan teks summary
 title = [
-    "Setidaknya 10 Orang Tewas dalam Serangan Drone di Sekolah Gaza yang Digunakan sebagai Tempat Perlindungan (CNN)",
-    "Bagaimana Ini Akan Berakhir? Dengan Hamas Tetap Kuat dan Melawan di Gaza, Israel Hanya Menghadapi Opsi yang Buruk (Associated Press)",
-    "Israel Terus Membom Gaza, Termasuk Rafah, Meski Putusan ICJ (Al Jazeera)",
+    "**Setidaknya 10 Orang Tewas dalam Serangan Drone di Sekolah Gaza yang Digunakan sebagai Tempat Perlindungan (CNN)**",
+    "**Bagaimana Ini Akan Berakhir? Dengan Hamas Tetap Kuat dan Melawan di Gaza, Israel Hanya Menghadapi Opsi yang Buruk (Associated Press)**",
+    "**Israel Terus Membom Gaza, Termasuk Rafah, Meski Putusan ICJ (Al Jazeera)**",
 ]
 
 image_urls = [
