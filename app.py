@@ -37,7 +37,7 @@ def resize_image(img, target_ratio=(3, 2)):
 title = [
     "Setidaknya 10 Orang Tewas dalam Serangan Drone di Sekolah Gaza yang Digunakan sebagai Tempat Perlindungan (CNN)",
     "Bagaimana Ini Akan Berakhir? Dengan Hamas Tetap Kuat dan Melawan di Gaza, Israel Hanya Menghadapi Opsi yang Buruk (Associated Press)",
-    "Israel Terus Membom Gaza, Termasuk Rafah, Meski Putusan ICJ",
+    "Israel Terus Membom Gaza, Termasuk Rafah, Meski Putusan ICJ (Al Jazeera)",
 ]
 
 image_urls = [
@@ -78,8 +78,8 @@ with col2:
         elif sentiment[0] == "Positif":
             st.success(sentiment[0])
 
-cols = st.columns(3)
-for i in range(1, 4):
+cols = st.columns(2)
+for i in range(1, 3):
     with cols[i-1]:
         img = load_image(image_urls[i])
         resized_img = resize_image(img)
