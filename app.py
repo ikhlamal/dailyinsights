@@ -79,44 +79,45 @@ selected_news = st.selectbox("Pilih Berita", list(news_data.keys()))
 # Mendapatkan data berita terpilih
 news = news_data[selected_news]
 
-if selected_news == "Berita 1":
-    st.subheader("Israel Terus Berusaha Mengalahkan Hamas di Gaza Meskipun Menimbulkan Banyak Korban")
-
-with st.container(border=True):
-    col1, col2 = st.columns([2, 3])
+with st.container:
+    if selected_news == "Berita 1":
+        st.subheader("Israel Terus Berusaha Mengalahkan Hamas di Gaza Meskipun Menimbulkan Banyak Korban")
     
-    with col1:
-        img = load_image(news["image_urls"][0])
-        resized_img = resize_image(img)
-        st.image(resized_img, use_column_width=True)
-    
-    with col2:
-        st.write(news["title"][0])
-        with st.container(border=True):
-            st.write(news["summaries"][0])
-        if news["sentiment"][0] == "Netral":
-            st.info(news["sentiment"][0])
-        elif news["sentiment"][0] == "Negatif":
-            st.error(news["sentiment"][0])
-        elif news["sentiment"][0] == "Positif":
-            st.success(news["sentiment"][0])
-    
-    cols = st.columns(2)
-    for i in range(1, 3):
-        with cols[i-1]:
-            img = load_image(news["image_urls"][i])
+    with st.container(border=True):
+        col1, col2 = st.columns([2, 3])
+        
+        with col1:
+            img = load_image(news["image_urls"][0])
             resized_img = resize_image(img)
             st.image(resized_img, use_column_width=True)
-            st.write(news["title"][i])
+        
+        with col2:
+            st.write(news["title"][0])
             with st.container(border=True):
-                st.write(news["summaries"][i])
-            if news["sentiment"][i] == "Netral":
-                st.info(news["sentiment"][i])
-            elif news["sentiment"][i] == "Negatif":
-                st.error(news["sentiment"][i])
-            elif news["sentiment"][i] == "Positif":
-                st.success(news["sentiment"][i])
-
-if selected_news == "Berita 1":
-    with st.container(border=True):
-        st.write("**Poin penting yang menjadi titik fokus dari ketiga portal berita tersebut adalah situasi konflik di Gaza antara Israel dan Hamas yang berlangsung dengan intensitas tinggi. Namun, terdapat perbedaan pemberitaan antara ketiga portal berita tersebut dalam hal fokus dan sudut pandangnya. CNN lebih menekankan pada jumlah korban jiwa dan situasi kemanusiaan yang memburuk di Gaza, Associated Press lebih fokus pada perlawanan Hamas dan tantangan yang dihadapi oleh Israel dalam menaklukkan mereka, sedangkan Al Jazeera lebih menyoroti tindakan Israel yang terus melakukan serangan meskipun diperintahkan untuk menghentikan operasi militer di Gaza oleh Pengadilan Internasional.**")
+                st.write(news["summaries"][0])
+            if news["sentiment"][0] == "Netral":
+                st.info(news["sentiment"][0])
+            elif news["sentiment"][0] == "Negatif":
+                st.error(news["sentiment"][0])
+            elif news["sentiment"][0] == "Positif":
+                st.success(news["sentiment"][0])
+        
+        cols = st.columns(2)
+        for i in range(1, 3):
+            with cols[i-1]:
+                img = load_image(news["image_urls"][i])
+                resized_img = resize_image(img)
+                st.image(resized_img, use_column_width=True)
+                st.write(news["title"][i])
+                with st.container(border=True):
+                    st.write(news["summaries"][i])
+                if news["sentiment"][i] == "Netral":
+                    st.info(news["sentiment"][i])
+                elif news["sentiment"][i] == "Negatif":
+                    st.error(news["sentiment"][i])
+                elif news["sentiment"][i] == "Positif":
+                    st.success(news["sentiment"][i])
+    
+    if selected_news == "Berita 1":
+        with st.container(border=True):
+            st.write("**Poin penting yang menjadi titik fokus dari ketiga portal berita tersebut adalah situasi konflik di Gaza antara Israel dan Hamas yang berlangsung dengan intensitas tinggi. Namun, terdapat perbedaan pemberitaan antara ketiga portal berita tersebut dalam hal fokus dan sudut pandangnya. CNN lebih menekankan pada jumlah korban jiwa dan situasi kemanusiaan yang memburuk di Gaza, Associated Press lebih fokus pada perlawanan Hamas dan tantangan yang dihadapi oleh Israel dalam menaklukkan mereka, sedangkan Al Jazeera lebih menyoroti tindakan Israel yang terus melakukan serangan meskipun diperintahkan untuk menghentikan operasi militer di Gaza oleh Pengadilan Internasional.**")
