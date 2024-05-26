@@ -74,7 +74,7 @@ news_data = {
 }
 
 # Pilihan berita
-selected_news = st.selectbox("Pilih Berita", list(news_data.keys()))
+selected_news = st.selectbox("", list(news_data.keys()))
 
 # Mendapatkan data berita terpilih
 news = news_data[selected_news]
