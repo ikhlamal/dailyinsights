@@ -71,14 +71,12 @@ with st.container(border=True):
             st.write(title[0])
             with st.container(border=True):
                 st.write(summaries[0])
-            col1, col2 = st.columns([1, 3])
-            with col1:
-                if sentiment[0] == "Netral":
-                    st.info(sentiment[0])
-                elif sentiment[0] == "Negatif":
-                    st.error(sentiment[0])
-                elif sentiment[0] == "Positif":
-                    st.success(sentiment[0])
+            if sentiment[0] == "Netral":
+                st.info(sentiment[0])
+            elif sentiment[0] == "Negatif":
+                st.error(sentiment[0])
+            elif sentiment[0] == "Positif":
+                st.success(sentiment[0])
         
         cols = st.columns(2)
         for i in range(1, 3):
