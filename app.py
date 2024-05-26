@@ -58,6 +58,8 @@ sentiment = [
     "Negatif",
 ]
 
+st.subheader("Israel Terus Berusaha Mengalahkan Hamas di Gaza Meskipun Menimbulkan Banyak Korban")
+
 col1, col2 = st.columns([2, 3])
 
 with col1:
