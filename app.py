@@ -35,7 +35,7 @@ def resize_image(img, target_ratio=(3, 2)):
 
 # URL gambar dan teks summary
 title = [
-    "Setidaknya 10 Orang Tewas dalam Serangan Drone di Sekolah Gaza yang Digunakan sebagai Tempat Perlindungan",
+    "Setidaknya 10 Orang Tewas dalam Serangan Drone di Sekolah Gaza yang Digunakan sebagai Tempat Perlindungan (CNN)",
     "PDI-P Sebut Ahok Siap Maju Pilgub Sumut, Jadi Penantang Bobby",
     "Masuk Bursa Cagub Sumut, Ahok Tunggu Penugasan PDIP",
     "Ahok Tunggu Tugas dari Partai Usai Disebut DPD PDIP Siap Maju Pilgub Sumut"
