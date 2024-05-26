@@ -36,30 +36,26 @@ def resize_image(img, target_ratio=(3, 2)):
 # URL gambar dan teks summary
 title = [
     "Setidaknya 10 Orang Tewas dalam Serangan Drone di Sekolah Gaza yang Digunakan sebagai Tempat Perlindungan (CNN)",
-    "PDI-P Sebut Ahok Siap Maju Pilgub Sumut, Jadi Penantang Bobby",
-    "Masuk Bursa Cagub Sumut, Ahok Tunggu Penugasan PDIP",
-    "Ahok Tunggu Tugas dari Partai Usai Disebut DPD PDIP Siap Maju Pilgub Sumut"
+    "Bagaimana Ini Akan Berakhir? Dengan Hamas Tetap Kuat dan Melawan di Gaza, Israel Hanya Menghadapi Opsi yang Buruk (Associated Press)",
+    "Israel Terus Membom Gaza, Termasuk Rafah, Meski Putusan ICJ",
 ]
 
 image_urls = [
     "https://media.cnn.com/api/v1/images/stellar/prod/still-20655949-19579-still.jpg?c=16x9&q=w_800,c_fill",
-    "https://asset.kompas.com/crops/9yieMQZ2-cwuQWaPTXrs5QqS9BA=/0x0:998x665/750x500/data/photo/2024/02/04/65bf65a465848.jpg",
-    "https://akcdn.detik.net.id/visual/2024/02/08/kader-pdi-p-basuki-tjahja-purnama-alias-ahok-1_169.jpeg?w=650&q=90",
-    "https://akcdn.detik.net.id/community/media/visual/2024/01/10/respons-ahok-soal-jokowi-absen-di-hut-pdip_169.png?w=700&q=90"
+    "https://dims.apnews.com/dims4/default/2bf1ba1/2147483647/strip/true/crop/5000x2813+0+260/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F41%2F88%2Ff7272f27f3010c89e6048951a6a8%2Ff01efd2f3ccb4f1988a94c1fad8a4b08",
+    "https://www.aljazeera.com/wp-content/uploads/2024/05/AFP__20240524__34TR4QY__v3__HighRes__TopshotPalestinianIsraelConflict-1716640985.jpg?resize=1920%2C1440",
 ]
 
 summaries = [
     "Sedikitnya 10 orang tewas dalam serangan drone terhadap sekolah di Gaza yang digunakan sebagai tempat perlindungan. Sekolah Al-Nazla di Saftawy, di pinggiran Jabaliya, digunakan sebagai tempat perlindungan sementara oleh pengungsi ketika serangan terjadi. Situasi kemanusiaan di Gaza semakin memburuk karena kurangnya akses ke rumah sakit dan fasilitas kesehatan, serta serangan Israel.",
-    "Ketua DPD PDI-P Sumatera Utara menyatakan bahwa Ahok siap maju sebagai calon gubernur di Pilkada Sumatera Utara 2024. Ahok dimunculkan sebagai penantang dari Bobby Nasution, yang didukung oleh Partai Gerindra. PDI-P membuka kerja sama dengan berbagai partai politik dan masih mempertimbangkan tokoh lain selain Ahok untuk diusung dalam Pilkada Sumut.",
-    "Ahok menyatakan terima kasih atas masuknya namanya sebagai calon gubernur di Sumut, namun mengingatkan bahwa keputusan akhir ada di tangan partai. Ahok menunggu penugasan dari PDIP setelah namanya masuk dalam bursa calon gubernur, serta berkomunikasi dengan pengurus DPD Sumut. Pada Rakernas PDIP, selain membahas Pilkada, juga dibahas strategi politik termasuk sikap partai di pemerintahan mendatang.",
-    "Basuki Tjahaja Purnama alias Ahok siap maju dalam Pilgub Sumut 2024 setelah mendapat dorongan dari DPD PDIP Sumut. Ahok akan menyerahkan langkah politiknya di Pilkada 2024 pada keputusan partai dan siap menunggu tugas dari partai. DPD PDIP Sumut selalu mempertimbangkan nama Ahok dalam Pilgub Sumut dan akan menyempurnakan keputusan sesuai dinamika politik."
+    "Hamas masih melanjutkan perlawanan di Gaza utara meski sudah tujuh bulan perang brutal dengan Israel, dengan Israel mengalami kesulitan menaklukkan mereka. Warga Israel merasa bahwa pilihan militer yang tersedia hanya buruk, menyebabkan perpecahan di dalam kabinet perang Netanyahu. Dua mantan jenderal yang kini menjadi anggota kabinet perang menentang re-okupasi Gaza atau penarikan mundur yang mungkin meninggalkan Hamas berkuasa.",
+    "Israel terus melakukan serangan ke Gaza, termasuk Rafah, meskipun diperintahkan oleh Pengadilan Internasional untuk mengakhiri operasi militer disana. Puluhan orang tewas di Gaza pusat dan utara yang menjadi sasaran serangan Israel, sedangkan rumah sakit di Rafah mengalami kesulitan pasokan bahan bakar. Dampak dari serangan ini termasuk peningkatan korban jiwa, pengungsi, dan krisis kemanusiaan di Gaza yang mengakibatkan kelaparan.",
 ]
 
 sentiment = [
     "Negatif",
-    "Positif",
-    "Netral",
-    "Netral"
+    "Negatif",
+    "Negatif",
 ]
 
 col1, col2 = st.columns([2, 3])
