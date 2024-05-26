@@ -61,39 +61,41 @@ sentiment = [
     "Netral",
     "Netral"
 ]
-
-col1, col2 = st.columns([2, 3])
-
-with col1:
-    img = load_image(image_urls[0])
-    resized_img = resize_image(img)
-    st.image(resized_img, use_column_width=True)
-
-with col2:
-    st.write(title[0])
+with st.container(border=True):
+    st.subheader("Israel Terus Berusaha Mengalahkan Hamas di Gaza Meskipun Menimbulkan Banyak Korban")
     with st.container(border=True):
-        st.write(summaries[0])
-    col1, col2 = st.columns([1, 3])
-    with col1:
-        if sentiment[0] == "Netral":
-            st.info(sentiment[0])
-        elif sentiment[0] == "Negatif":
-            st.error(sentiment[0])
-        elif sentiment[0] == "Positif":
-            st.success(sentiment[0])
-
-cols = st.columns(3)
-for i in range(1, 4):
-    with cols[i-1]:
-        img = load_image(image_urls[i])
-        resized_img = resize_image(img)
-        st.image(resized_img, use_column_width=True)
-        st.write(title[i])
-        with st.container(border=True):
-            st.write(summaries[i])
-        if sentiment[i] == "Netral":
-            st.info(sentiment[i])
-        elif sentiment[i] == "Negatif":
-            st.error(sentiment[i])
-        elif sentiment[i] == "Positif":
-            st.success(sentiment[i])
+        col1, col2 = st.columns([2, 3])
+        
+        with col1:
+            img = load_image(image_urls[0])
+            resized_img = resize_image(img)
+            st.image(resized_img, use_column_width=True)
+        
+        with col2:
+            st.write(title[0])
+            with st.container(border=True):
+                st.write(summaries[0])
+            if sentiment[0] == "Netral":
+                st.info(sentiment[0])
+            elif sentiment[0] == "Negatif":
+                st.error(sentiment[0])
+            elif sentiment[0] == "Positif":
+                st.success(sentiment[0])
+        
+        cols = st.columns(2)
+        for i in range(1, 3):
+            with cols[i-1]:
+                img = load_image(image_urls[i])
+                resized_img = resize_image(img)
+                st.image(resized_img, use_column_width=True)
+                st.write(title[i])
+                with st.container(border=True):
+                    st.write(summaries[i])
+                if sentiment[i] == "Netral":
+                    st.info(sentiment[i])
+                elif sentiment[i] == "Negatif":
+                    st.error(sentiment[i])
+                elif sentiment[i] == "Positif":
+                    st.success(sentiment[i])
+    with st.container(border=True):
+        st.write("**Poin penting yang menjadi titik fokus dari ketiga portal berita tersebut adalah situasi konflik di Gaza antara Israel dan Hamas yang berlangsung dengan intensitas tinggi. Namun, terdapat perbedaan pemberitaan antara ketiga portal berita tersebut dalam hal fokus dan sudut pandangnya. CNN lebih menekankan pada jumlah korban jiwa dan situasi kemanusiaan yang memburuk di Gaza, Associated Press lebih fokus pada perlawanan Hamas dan tantangan yang dihadapi oleh Israel dalam menaklukkan mereka, sedangkan Al Jazeera lebih menyoroti tindakan Israel yang terus melakukan serangan meskipun diperintahkan untuk menghentikan operasi militer di Gaza oleh Pengadilan Internasional.**")
