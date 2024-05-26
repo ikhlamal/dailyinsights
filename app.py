@@ -106,22 +106,25 @@ with st.container(border=True):
                 st.error(news["sentiment"][0])
             elif news["sentiment"][0] == "Positif":
                 st.success(news["sentiment"][0])
-        
-        cols = st.columns(2)
-        for i in range(1, 3):
-            with cols[i-1]:
-                img = load_image(news["image_urls"][i])
-                resized_img = resize_image(img)
-                st.image(resized_img, use_column_width=True)
-                st.write(news["title"][i])
-                with st.container(border=True):
-                    st.write(news["summaries"][i])
-                if news["sentiment"][i] == "Netral":
-                    st.info(news["sentiment"][i])
-                elif news["sentiment"][i] == "Negatif":
-                    st.error(news["sentiment"][i])
-                elif news["sentiment"][i] == "Positif":
-                    st.success(news["sentiment"][i])
+        if selected_news == "Berita 1":
+            cols = st.columns(2)
+            for i in range(1, 3):
+        if selected_news == "Berita 2":
+            cols = st.columns(3)
+            for i in range(1, 4):
+                with cols[i-1]:
+                    img = load_image(news["image_urls"][i])
+                    resized_img = resize_image(img)
+                    st.image(resized_img, use_column_width=True)
+                    st.write(news["title"][i])
+                    with st.container(border=True):
+                        st.write(news["summaries"][i])
+                    if news["sentiment"][i] == "Netral":
+                        st.info(news["sentiment"][i])
+                    elif news["sentiment"][i] == "Negatif":
+                        st.error(news["sentiment"][i])
+                    elif news["sentiment"][i] == "Positif":
+                        st.success(news["sentiment"][i])
     
     if selected_news == "Berita 1":
         with st.container(border=True):
