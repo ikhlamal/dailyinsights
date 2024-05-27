@@ -185,7 +185,7 @@ with st.container(border=True):
         title='Distribusi Bias Politik',
         xaxis=dict(title='Persentase', range=[0, 100]),
         yaxis=dict(title=''),
-        showlegend=True,
+        showlegend=False,
         height=400,
         margin=dict(l=0, r=0, t=30, b=0)
     )
