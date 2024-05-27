@@ -132,7 +132,7 @@ with st.container(border=True):
                 st.error(news["sentiment"][0])
             elif news["sentiment"][0] == "Positif":
                 st.success(news["sentiment"][0])
-        if selected_news == "Berita 1":
+        if selected_news == "Berita 1" or selected_news == "Berita 3":
             cols = st.columns(2)
             for i in range(1, 3):
                 with cols[i-1]:
