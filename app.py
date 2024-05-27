@@ -144,8 +144,6 @@ with st.container(border=True):
                         st.success(news["sentiment"][i])
     
     import plotly.graph_objects as go
-    
-
     # Data persentase distribusi bias politik
     data1 = {
         'Bias': ['Left', 'Center', 'Right'],
@@ -172,13 +170,22 @@ with st.container(border=True):
     # Menambahkan segmen untuk masing-masing bias politik pada bar
     for dataset in df['Dataset'].unique():
         for i, row in df[df['Dataset'] == dataset].iterrows():
-            fig.add_trace(go.Bar(
-                x=[row['Percentage']], y=[dataset],
-                name=row['Bias'] if dataset == 'Dataset 1' else None,  # Hanya menampilkan nama legenda untuk Dataset 1
-                orientation='h',
-                marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
-                hoverinfo='x'
-            ))
+            if dataset == 'Dataset 1':
+                fig.add_trace(go.Bar(
+                    x=[row['Percentage']], y=[dataset],
+                    name=row['Bias'],
+                    orientation='h',
+                    marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
+                    hoverinfo='x'
+                ))
+            else:
+                fig.add_trace(go.Bar(
+                    x=[row['Percentage']], y=[dataset],
+                    showlegend=False,  # Tidak menampilkan legenda untuk dataset kedua
+                    orientation='h',
+                    marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
+                    hoverinfo='x'
+                ))
     
     # Memodifikasi layout untuk menghilangkan spasi antar bar dan menambahkan judul serta mengatur ukuran
     fig.update_layout(
