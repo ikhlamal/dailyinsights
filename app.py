@@ -87,6 +87,9 @@ news = news_data[selected_news]
 with st.container(border=True):
     if selected_news == "Berita 1":
         st.subheader("Israel Terus Berusaha Mengalahkan Hamas di Gaza Meskipun Menimbulkan Banyak Korban")
+        st.text_area("Left", "Serangan Israel terhadap Gaza menimbulkan dampak kemanusiaan yang buruk, dengan puluhan orang tewas dan rumah sakit kesulitan mendapat pasokan bahan bakar. Pengadilan Internasional memerintahkan Israel untuk mengakhiri operasi militer, namun serangan terus dilakukan.")                        
+        st.text_area("Center", "Perlawanan Hamas di Gaza utara terus berlanjut, menyebabkan kesulitan bagi Israel dalam menaklukkan mereka. Warga Israel merasa bahwa pilihan militer yang tersedia buruk, dengan dua mantan jenderal menentang re-okupasi Gaza atau penarikan mundur.")
+        st.text_area("Right", "Serangan drone terhadap sekolah di Gaza menewaskan sedikitnya 10 orang, dimana sekolah tersebut digunakan sebagai tempat perlindungan sementara oleh pengungsi. Situasi kemanusiaan semakin memburuk di Gaza karena kurangnya akses ke rumah sakit dan fasilitas kesehatan.")
     if selected_news == "Berita 2":
         st.subheader("Ahok Siap Maju Sebagai Calon Gubernur Sumatera Utara 2024")
         st.text_area("Left", "Ketua DPD PDIP Sumatera Utara, Rapidin Simbolon, mengungkapkan bahwa Ahok siap maju di Pilgub Sumut 2024. Nama-nama calon kuat lainnya yang dipertimbangkan adalah Niksok Nababan, Eddy Rahmayadi, dan Musa Rajekshah. Proses penjaringan masih dalam tahap pembahasan di tingkat pusat.")                        
@@ -145,6 +148,69 @@ with st.container(border=True):
                         st.success(news["sentiment"][i])
     
     if selected_news == "Berita 1":
+        data1 = {
+            'Bias': ['Left', 'Center', 'Right'],
+            'Percentage': [60, 30, 10]  # Contoh data pertama
+        }
+        
+        data2 = {
+            'Bias': ['Left', 'Center', 'Right'],
+            'Percentage': [30, 50, 20]  # Contoh data kedua
+        }
+    
+        data3 = {
+            'Bias': ['Left', 'Center', 'Right'],
+            'Percentage': [70, 20, 10]
+        }
+        
+        # Gabungkan kedua dataset ke dalam satu dataset tunggal dengan menambahkan kolom tambahan 'Dataset'
+        df1 = pd.DataFrame(data1)
+        df1['Dataset'] = 'Aljazeera'
+        
+        df2 = pd.DataFrame(data2)
+        df2['Dataset'] = 'Associated Press'
+    
+        df3 = pd.DataFrame(data3)
+        df3['Dataset'] = 'CNN'
+        
+        df = pd.concat([df1, df2, df3])
+        
+        # Membuat plotly figure
+        fig = go.Figure()
+        
+        # Menambahkan segmen untuk masing-masing bias politik pada bar
+        for dataset in df['Dataset'].unique():
+            for i, row in df[df['Dataset'] == dataset].iterrows():
+                if dataset == 'CNN':
+                    fig.add_trace(go.Bar(
+                        x=[row['Percentage']], y=[dataset],
+                        name=row['Bias'],                
+                        orientation='h',
+                        marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
+                        hoverinfo='x'
+                    ))
+                else:
+                    fig.add_trace(go.Bar(
+                        x=[row['Percentage']], y=[dataset],
+                        showlegend=False,
+                        orientation='h',
+                        marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
+                        hoverinfo='x'
+                    ))
+        
+        # Memodifikasi layout untuk menghilangkan spasi antar bar dan menambahkan judul serta mengatur ukuran
+        fig.update_layout(
+            barmode='stack',
+            title='Distribusi Bias Politik',
+            xaxis=dict(title='Persentase', range=[0, 100]),
+            yaxis=dict(title=''),
+            showlegend=True,
+            height=400,
+            margin=dict(l=0, r=0, t=30, b=0)
+        )
+        
+        # Menampilkan chart di Streamlit
+        st.plotly_chart(fig)
         with st.container(border=True):
             st.write("**Poin penting yang menjadi titik fokus dari ketiga portal berita tersebut adalah situasi konflik di Gaza antara Israel dan Hamas yang berlangsung dengan intensitas tinggi. Namun, terdapat perbedaan pemberitaan antara ketiga portal berita tersebut dalam hal fokus dan sudut pandangnya. CNN lebih menekankan pada jumlah korban jiwa dan situasi kemanusiaan yang memburuk di Gaza, Associated Press lebih fokus pada perlawanan Hamas dan tantangan yang dihadapi oleh Israel dalam menaklukkan mereka, sedangkan Al Jazeera lebih menyoroti tindakan Israel yang terus melakukan serangan meskipun diperintahkan untuk menghentikan operasi militer di Gaza oleh Pengadilan Internasional.**")
     if selected_news == "Berita 2":
