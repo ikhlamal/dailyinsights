@@ -75,6 +75,24 @@ news_data = {
             "Basuki Tjahaja Purnama alias Ahok siap maju dalam Pilgub Sumut 2024 setelah mendapat dorongan dari DPD PDIP Sumut. Ahok akan menyerahkan langkah politiknya di Pilkada 2024 pada keputusan partai dan siap menunggu tugas dari partai. DPD PDIP Sumut selalu mempertimbangkan nama Ahok dalam Pilgub Sumut dan akan menyempurnakan keputusan sesuai dinamika politik."
         ],
         "sentiment": ["Netral", "Positif", "Netral", "Netral"],
+    },
+    "Berita 3": {
+        "title": [
+            "**Mantan Agen CIA Akui Bersalah Jadi Mata-mata China (Detik)**",
+            "**Mantan Perwira CIA Mengaku Bersalah Jadi Mata-Mata China (CNBC Indonesia)**",
+            "**Eks Agen CIA Mengaku Bersalah Jadi Mata-mata Cina (Tempo)**",
+        ],
+        "image_urls": [
+            "https://awsimages.detik.net.id/api/wm/2017/02/03/f9f96da3-a6c9-41c8-ad6d-e4885a94abef_169.jpg?wid=54&w=650&v=1&t=jpeg",
+            "https://awsimages.detik.net.id/api/wm/2023/01/17/cia_169.jpeg?w=650",
+            "https://statik.tempo.co/data/2022/09/26/id_1143842/1143842_720.jpg?rand=3",
+        ],
+        "summaries": [
+            "Seorang mantan agen CIA, Alexander Yuk Ching Ma, mengaku bersalah menjadi mata-mata China dengan memberikan informasi rahasia pertahanan AS kepada otoritas Beijing. Tindakan Ma bermula sejak tahun 2001 dan ia juga terlibat dengan mantan agen CIA lain yang merupakan saudara sedarahnya. Departemen Kehakiman AS menyebut bahwa Ma menerima uang tunai sebesar US$ 50.000 dari agen intelijen China.",
+            "Mantan perwira CIA Alexander Yuk Ching Ma (71) mengaku bersalah memberikan informasi pertahanan kepada China setelah bekerja selama 7 tahun di CIA pada 1980an. Departemen Kehakiman AS menduga Ma memberikan informasi intelijen AS kepada China secara relatif besar dengan pertukaran puluhan ribu dolar. Meski Ma belum memberikan komentar, DOJ menyebut Ma harus bekerja sama dengan pemerintah AS dan menghadapi hukuman 10 tahun penjara federal.",
+            "Mantan agen CIA, Alexander Yuk Ching Ma, mengaku bersalah menjadi mata-mata Cina dengan memberikan informasi rahasia pertahanan nasional AS pada 2001. Ma menerima uang tunai US$ 50.000 dari pihak intelijen Cina dan bekerja sama dengan saudara sedarahnya yang juga menjadi mata-mata Cina. Perjanjian pengakuan bersalah akan membuat Ma dipenjara hingga 10 tahun jika diterima oleh pengadilan.",
+        ],
+        "sentiment": ["Netral", "Negatif", "Negatif"],
     }
 }
 
