@@ -3,6 +3,7 @@ import pandas as pd
 from PIL import Image
 import requests
 from io import BytesIO
+import plotly.graph_objects as go
 
 st.set_page_config(layout="wide")
 
@@ -143,76 +144,73 @@ with st.container(border=True):
                     elif news["sentiment"][i] == "Positif":
                         st.success(news["sentiment"][i])
     
-    import plotly.graph_objects as go
-    # Data persentase distribusi bias politik
-    data1 = {
-        'Bias': ['Left', 'Center', 'Right'],
-        'Percentage': [0, 100, 0]  # Contoh data pertama
-    }
-    
-    data2 = {
-        'Bias': ['Left', 'Center', 'Right'],
-        'Percentage': [50, 50, 0]  # Contoh data kedua
-    }
-
-    data3 = {
-        'Bias': ['Left', 'Center', 'Right'],
-        'Percentage': [0, 0, 100]
-    }
-    
-    # Gabungkan kedua dataset ke dalam satu dataset tunggal dengan menambahkan kolom tambahan 'Dataset'
-    df1 = pd.DataFrame(data1)
-    df1['Dataset'] = 'Kompas'
-    
-    df2 = pd.DataFrame(data2)
-    df2['Dataset'] = 'CNN Indonesia'
-
-    df3 = pd.DataFrame(data3)
-    df3['Dataset'] = 'Detik'
-    
-    df = pd.concat([df1, df2, df3])
-    
-    # Membuat plotly figure
-    fig = go.Figure()
-    
-    # Menambahkan segmen untuk masing-masing bias politik pada bar
-    for dataset in df['Dataset'].unique():
-        for i, row in df[df['Dataset'] == dataset].iterrows():
-            if dataset == 'Kompas':
-                fig.add_trace(go.Bar(
-                    x=[row['Percentage']], y=[dataset],
-                    name=row['Bias'],
-                    orientation='h',
-                    marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
-                    hoverinfo='x'
-                ))
-            else:
-                fig.add_trace(go.Bar(
-                    x=[row['Percentage']], y=[dataset],
-                    showlegend=False,  # Tidak menampilkan legenda untuk dataset kedua
-                    orientation='h',
-                    marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
-                    hoverinfo='x'
-                ))
-    
-    # Memodifikasi layout untuk menghilangkan spasi antar bar dan menambahkan judul serta mengatur ukuran
-    fig.update_layout(
-        barmode='stack',
-        title='Distribusi Bias Politik',
-        xaxis=dict(title='Persentase', range=[0, 100]),
-        yaxis=dict(title=''),
-        showlegend=True,
-        height=400,
-        margin=dict(l=0, r=0, t=30, b=0)
-    )
-    
-    # Menampilkan chart di Streamlit
-    st.plotly_chart(fig)
-    
     if selected_news == "Berita 1":
         with st.container(border=True):
             st.write("**Poin penting yang menjadi titik fokus dari ketiga portal berita tersebut adalah situasi konflik di Gaza antara Israel dan Hamas yang berlangsung dengan intensitas tinggi. Namun, terdapat perbedaan pemberitaan antara ketiga portal berita tersebut dalam hal fokus dan sudut pandangnya. CNN lebih menekankan pada jumlah korban jiwa dan situasi kemanusiaan yang memburuk di Gaza, Associated Press lebih fokus pada perlawanan Hamas dan tantangan yang dihadapi oleh Israel dalam menaklukkan mereka, sedangkan Al Jazeera lebih menyoroti tindakan Israel yang terus melakukan serangan meskipun diperintahkan untuk menghentikan operasi militer di Gaza oleh Pengadilan Internasional.**")
     if selected_news == "Berita 2":
+        data1 = {
+            'Bias': ['Left', 'Center', 'Right'],
+            'Percentage': [0, 100, 0]  # Contoh data pertama
+        }
+        
+        data2 = {
+            'Bias': ['Left', 'Center', 'Right'],
+            'Percentage': [50, 50, 0]  # Contoh data kedua
+        }
+    
+        data3 = {
+            'Bias': ['Left', 'Center', 'Right'],
+            'Percentage': [0, 0, 100]
+        }
+        
+        # Gabungkan kedua dataset ke dalam satu dataset tunggal dengan menambahkan kolom tambahan 'Dataset'
+        df1 = pd.DataFrame(data1)
+        df1['Dataset'] = 'Kompas'
+        
+        df2 = pd.DataFrame(data2)
+        df2['Dataset'] = 'CNN Indonesia'
+    
+        df3 = pd.DataFrame(data3)
+        df3['Dataset'] = 'Detik'
+        
+        df = pd.concat([df1, df2, df3])
+        
+        # Membuat plotly figure
+        fig = go.Figure()
+        
+        # Menambahkan segmen untuk masing-masing bias politik pada bar
+        for dataset in df['Dataset'].unique():
+            for i, row in df[df['Dataset'] == dataset].iterrows():
+                if dataset == 'Kompas':
+                    fig.add_trace(go.Bar(
+                        x=[row['Percentage']], y=[dataset],
+                        name=row['Bias'],                
+                        orientation='h',
+                        marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
+                        hoverinfo='x'
+                    ))
+                else:
+                    fig.add_trace(go.Bar(
+                        x=[row['Percentage']], y=[dataset],
+                        showlegend=False,
+                        orientation='h',
+                        marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
+                        hoverinfo='x'
+                    ))
+        
+        # Memodifikasi layout untuk menghilangkan spasi antar bar dan menambahkan judul serta mengatur ukuran
+        fig.update_layout(
+            barmode='stack',
+            title='Distribusi Bias Politik',
+            xaxis=dict(title='Persentase', range=[0, 100]),
+            yaxis=dict(title=''),
+            showlegend=True,
+            height=400,
+            margin=dict(l=0, r=0, t=30, b=0)
+        )
+        
+        # Menampilkan chart di Streamlit
+        st.plotly_chart(fig)
         with st.container(border=True):
             st.write("**Poin penting dari keempat ringkasan berita di atas adalah bahwa Basuki Tjahaja Purnama (Ahok) siap maju sebagai calon gubernur di Pilkada Sumatera Utara 2024. Namun, terdapat perbedaan dalam penekanan antara portal berita tersebut. CNN Indonesia dan Detik menyoroti bahwa Ahok mendapat dukungan dari DPD PDIP Sumut dan siap menunggu tugas dari partai, sementara Kompas menyoroti bahwa Ahok akan menjadi penantang dari Bobby Nasution yang didukung oleh Partai Gerindra. PDI-P masih mempertimbangkan tokoh lain selain Ahok untuk diusung dalam Pilkada Sumut. Di sisi lain, CNN Indonesia juga menekankan bahwa keputusan akhir ada di tangan partai, sementara Detik menyoroti bahwa DPD PDIP Sumut selalu mempertimbangkan nama Ahok dalam Pilgub Sumut dan akan menyempurnakan keputusan sesuai dinamika politik.***")
     
