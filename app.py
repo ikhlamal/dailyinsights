@@ -314,14 +314,13 @@ with st.container(border=True):
         
         # Menampilkan chart di Streamlit
         st.plotly_chart(fig)
-        st.text_area("", 
-        """
-        - Detik cenderung konservatif dan menyoroti peran partai dalam keputusan politik.
-        - CNN Indonesia cenderung bersikap progresif dan mendukung keputusan partai dalam penyaringan calon.
-        - Kompas cenderung netral dan memberikan informasi yang seimbang dari berbagai sumber.
-        """)
-        st.text_area("", "CNN Indonesia cenderung bersikap progresif dan mendukung keputusan partai dalam penyaringan calon.")
-        st.text_area("", "Kompas cenderung netral dan memberikan informasi yang seimbang dari berbagai sumber.")
+        with st.container(border=True):
+            st.write( 
+                """
+                - Detik cenderung konservatif dan menyoroti peran partai dalam keputusan politik.
+                - CNN Indonesia cenderung bersikap progresif dan mendukung keputusan partai dalam penyaringan calon.
+                - Kompas cenderung netral dan memberikan informasi yang seimbang dari berbagai sumber.
+                """)
         with st.container(border=True):
             st.write("**Poin penting dari keempat ringkasan berita di atas adalah bahwa Basuki Tjahaja Purnama (Ahok) siap maju sebagai calon gubernur di Pilkada Sumatera Utara 2024. Namun, terdapat perbedaan dalam penekanan antara portal berita tersebut. CNN Indonesia dan Detik menyoroti bahwa Ahok mendapat dukungan dari DPD PDIP Sumut dan siap menunggu tugas dari partai, sementara Kompas menyoroti bahwa Ahok akan menjadi penantang dari Bobby Nasution yang didukung oleh Partai Gerindra. PDI-P masih mempertimbangkan tokoh lain selain Ahok untuk diusung dalam Pilkada Sumut. Di sisi lain, CNN Indonesia juga menekankan bahwa keputusan akhir ada di tangan partai, sementara Detik menyoroti bahwa DPD PDIP Sumut selalu mempertimbangkan nama Ahok dalam Pilgub Sumut dan akan menyempurnakan keputusan sesuai dinamika politik.**")
     if selected_news == "Berita 3":
