@@ -169,16 +169,15 @@ with st.container(border=True):
     fig = go.Figure()
     
     # Menambahkan segmen untuk masing-masing bias politik pada bar
-    for dataset in df['Dataset'].unique():
-        for i, row in df[df['Dataset'] == dataset].iterrows():
-            fig.add_trace(go.Bar(
-                x=[row['Percentage']], y=[dataset],
-                name=row['Bias'],
-                legendgroup=row['Bias'],  # Mengatur legend group agar hanya satu entri legenda yang ditampilkan untuk setiap warna
-                orientation='h',
-                marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
-                hoverinfo='x'
-            ))
+    for i, row in df.iterrows():
+        fig.add_trace(go.Bar(
+            x=[row['Percentage']], y=[row['Dataset']],
+            name=row['Bias'],
+            legendgroup=row['Bias'],  # Mengatur legend group agar hanya satu entri legenda yang ditampilkan untuk setiap warna
+            orientation='h',
+            marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
+            hoverinfo='x'
+        ))
     
     # Memodifikasi layout untuk menghilangkan spasi antar bar dan menambahkan judul serta mengatur ukuran
     fig.update_layout(
