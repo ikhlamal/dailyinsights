@@ -339,11 +339,11 @@ with st.container(border=True):
                     fig.add_trace(go.Bar(
                         x=[row['Percentage']], y=[dataset],
                         name=row['Bias'],
-                        text=[f'Detik cenderung menghadirkan berita secara netral tanpa bias politik, sehingga menampilkan berita tersebut dengan porsi yang seimbang berdasarkan fakta yang ada.'],
                         orientation='h',
                         marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
-                        hoverinfo='x+text'
+                        hoverinfo='x'
                     ))
+                    st.write("Detik cenderung menghadirkan berita secara netral tanpa bias politik, sehingga menampilkan berita tersebut dengan porsi yang seimbang berdasarkan fakta yang ada.")
                 else:
                     fig.add_trace(go.Bar(
                         x=[row['Percentage']], y=[dataset],
