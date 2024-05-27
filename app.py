@@ -147,20 +147,28 @@ with st.container(border=True):
     # Data persentase distribusi bias politik
     data1 = {
         'Bias': ['Left', 'Center', 'Right'],
-        'Percentage': [40, 35, 25]  # Contoh data pertama
+        'Percentage': [0, 100, 0]  # Contoh data pertama
     }
     
     data2 = {
         'Bias': ['Left', 'Center', 'Right'],
         'Percentage': [50, 50, 0]  # Contoh data kedua
     }
+
+    data3 = {
+        'Bias': ['Left', 'Center', 'Right'],
+        'Percentage': [0, 0, 100]
+    }
     
     # Gabungkan kedua dataset ke dalam satu dataset tunggal dengan menambahkan kolom tambahan 'Dataset'
     df1 = pd.DataFrame(data1)
-    df1['Dataset'] = 'Dataset 1'
+    df1['Dataset'] = 'Kompas'
     
     df2 = pd.DataFrame(data2)
-    df2['Dataset'] = 'Dataset 2'
+    df2['Dataset'] = 'CNN Indonesia'
+
+    df3 = pd.DataFrame(data3)
+    df3['Dataset'] = 'Detik'
     
     df = pd.concat([df1, df2])
     
