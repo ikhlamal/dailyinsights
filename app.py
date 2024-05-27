@@ -143,16 +143,54 @@ with st.container(border=True):
                     elif news["sentiment"][i] == "Positif":
                         st.success(news["sentiment"][i])
     
+    import plotly.graph_objects as go
+    
+    # Data persentase distribusi bias politik
     data = {
         'Bias': ['Left', 'Center', 'Right'],
         'Percentage': [40, 35, 25]  # Contoh data, sesuaikan dengan data Anda
     }
-
-    # Membuat DataFrame
-    df = pd.DataFrame(data)
     
-    # Menampilkan bar chart
-    st.bar_chart(df.set_index('Bias'))
+    # Membuat figure
+    fig = go.Figure()
+    
+    # Menambahkan trace untuk 'Left'
+    fig.add_trace(go.Bar(
+        y=['Bias'],
+        x=[data['Percentage'][0]],
+        name='Left',
+        orientation='h',
+        marker=dict(color='blue')
+    ))
+    
+    # Menambahkan trace untuk 'Center'
+    fig.add_trace(go.Bar(
+        y=['Bias'],
+        x=[data['Percentage'][1]],
+        name='Center',
+        orientation='h',
+        marker=dict(color='green')
+    ))
+    
+    # Menambahkan trace untuk 'Right'
+    fig.add_trace(go.Bar(
+        y=['Bias'],
+        x=[data['Percentage'][2]],
+        name='Right',
+        orientation='h',
+        marker=dict(color='red')
+    ))
+    
+    # Mengatur layout
+    fig.update_layout(
+        barmode='stack',
+        title='Distribusi Bias Politik',
+        xaxis=dict(title='Persentase'),
+        yaxis=dict(title='')
+    )
+    
+    # Menampilkan chart di Streamlit
+    st.plotly_chart(fig)
     
     if selected_news == "Berita 1":
         with st.container(border=True):
