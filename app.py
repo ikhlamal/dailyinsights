@@ -146,47 +146,78 @@ with st.container(border=True):
     import plotly.graph_objects as go
     
     # Data persentase distribusi bias politik
-    data = {
+    data1 = {
         'Bias': ['Left', 'Center', 'Right'],
-        'Percentage': [40, 35, 25]  # Contoh data, sesuaikan dengan data Anda
+        'Percentage': [40, 35, 25]  # Contoh data pertama
     }
     
-    # Membuat figure
+    data2 = {
+        'Bias': ['Left', 'Center', 'Right'],
+        'Percentage': [50, 50, 0]  # Contoh data kedua
+    }
+    
+    # Membuat plotly figure
     fig = go.Figure()
     
-    # Menambahkan trace untuk 'Left'
+    # Menambahkan segmen untuk masing-masing bias politik pada bar pertama
     fig.add_trace(go.Bar(
-        y=['Bias'],
-        x=[data['Percentage'][0]],
+        x=[data1['Percentage'][0]], y=['Dataset 1'],
         name='Left',
         orientation='h',
-        marker=dict(color='blue')
+        marker=dict(color='blue'),
+        hoverinfo='x'
     ))
     
-    # Menambahkan trace untuk 'Center'
     fig.add_trace(go.Bar(
-        y=['Bias'],
-        x=[data['Percentage'][1]],
+        x=[data1['Percentage'][1]], y=['Dataset 1'],
         name='Center',
         orientation='h',
-        marker=dict(color='green')
+        marker=dict(color='green'),
+        hoverinfo='x'
     ))
     
-    # Menambahkan trace untuk 'Right'
     fig.add_trace(go.Bar(
-        y=['Bias'],
-        x=[data['Percentage'][2]],
+        x=[data1['Percentage'][2]], y=['Dataset 1'],
         name='Right',
         orientation='h',
-        marker=dict(color='red')
+        marker=dict(color='red'),
+        hoverinfo='x'
     ))
     
-    # Mengatur layout
+    # Menambahkan segmen untuk masing-masing bias politik pada bar kedua
+    fig.add_trace(go.Bar(
+        x=[data2['Percentage'][0]], y=['Dataset 2'],
+        name='Left',
+        orientation='h',
+        marker=dict(color='blue'),
+        hoverinfo='x'
+    ))
+    
+    fig.add_trace(go.Bar(
+        x=[data2['Percentage'][1]], y=['Dataset 2'],
+        name='Center',
+        orientation='h',
+        marker=dict(color='green'),
+        hoverinfo='x'
+    ))
+    
+    fig.add_trace(go.Bar(
+        x=[data2['Percentage'][2]], y=['Dataset 2'],
+        name='Right',
+        orientation='h',
+        marker=dict(color='red'),
+        hoverinfo='x'
+    ))
+    
+    # Memodifikasi layout untuk menghilangkan spasi antar bar dan menambahkan judul serta mengatur ukuran
     fig.update_layout(
         barmode='stack',
         title='Distribusi Bias Politik',
-        xaxis=dict(title='Persentase'),
-        yaxis=dict(title='')
+        xaxis=dict(title='Persentase', range=[0, 100]),
+        yaxis=dict(title=''),
+        showlegend=True,
+        height=400,
+        margin=dict(l=0, r=0, t=30, b=0)
     )
     
     # Menampilkan chart di Streamlit
