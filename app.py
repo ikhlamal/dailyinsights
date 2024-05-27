@@ -184,30 +184,30 @@ with st.container(border=True):
         hoverinfo='x'
     ))
     
-    # Menambahkan segmen untuk masing-masing bias politik pada bar kedua
-    fig.add_trace(go.Bar(
-        x=[data2['Percentage'][0]], y=['Dataset 2'],
-        name='Left',
-        orientation='h',
-        marker=dict(color='blue'),
-        hoverinfo='x'
-    ))
+    # # Menambahkan segmen untuk masing-masing bias politik pada bar kedua
+    # fig.add_trace(go.Bar(
+    #     x=[data2['Percentage'][0]], y=['Dataset 2'],
+    #     name='Left',
+    #     orientation='h',
+    #     marker=dict(color='blue'),
+    #     hoverinfo='x'
+    # ))
     
-    fig.add_trace(go.Bar(
-        x=[data2['Percentage'][1]], y=['Dataset 2'],
-        name='Center',
-        orientation='h',
-        marker=dict(color='green'),
-        hoverinfo='x'
-    ))
+    # fig.add_trace(go.Bar(
+    #     x=[data2['Percentage'][1]], y=['Dataset 2'],
+    #     name='Center',
+    #     orientation='h',
+    #     marker=dict(color='green'),
+    #     hoverinfo='x'
+    # ))
     
-    fig.add_trace(go.Bar(
-        x=[data2['Percentage'][2]], y=['Dataset 2'],
-        name='Right',
-        orientation='h',
-        marker=dict(color='red'),
-        hoverinfo='x'
-    ))
+    # fig.add_trace(go.Bar(
+    #     x=[data2['Percentage'][2]], y=['Dataset 2'],
+    #     name='Right',
+    #     orientation='h',
+    #     marker=dict(color='red'),
+    #     hoverinfo='x'
+    # ))
     
     # Memodifikasi layout untuk menghilangkan spasi antar bar dan menambahkan judul serta mengatur ukuran
     fig.update_layout(
