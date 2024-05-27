@@ -85,7 +85,7 @@ news_data = {
         "image_urls": [
             "https://awsimages.detik.net.id/api/wm/2017/02/03/f9f96da3-a6c9-41c8-ad6d-e4885a94abef_169.jpg?wid=54&w=650&v=1&t=jpeg",
             "https://awsimages.detik.net.id/api/wm/2023/01/17/cia_169.jpeg?w=650",
-            "https://statik.tempo.co/data/2022/09/26/id_1143842/1143842_720.jpg?rand=3",
+            "https://koran-jakarta.com/images/article/mantan-agen-cia-mengaku-bersalah-jadi-mata-mata-tiongkok-240525100114.jpg",
         ],
         "summaries": [
             "Seorang mantan agen CIA, Alexander Yuk Ching Ma, mengaku bersalah menjadi mata-mata China dengan memberikan informasi rahasia pertahanan AS kepada otoritas Beijing. Tindakan Ma bermula sejak tahun 2001 dan ia juga terlibat dengan mantan agen CIA lain yang merupakan saudara sedarahnya. Departemen Kehakiman AS menyebut bahwa Ma menerima uang tunai sebesar US$ 50.000 dari agen intelijen China.",
