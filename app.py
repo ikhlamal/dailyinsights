@@ -236,14 +236,20 @@ with st.container(border=True):
         with st.container(border=True):
             st.write("**Poin penting yang menjadi titik fokus dari ketiga portal berita tersebut adalah situasi konflik di Gaza antara Israel dan Hamas yang berlangsung dengan intensitas tinggi. Namun, terdapat perbedaan pemberitaan antara ketiga portal berita tersebut dalam hal fokus dan sudut pandangnya. CNN lebih menekankan pada jumlah korban jiwa dan situasi kemanusiaan yang memburuk di Gaza, Associated Press lebih fokus pada perlawanan Hamas dan tantangan yang dihadapi oleh Israel dalam menaklukkan mereka, sedangkan Al Jazeera lebih menyoroti tindakan Israel yang terus melakukan serangan meskipun diperintahkan untuk menghentikan operasi militer di Gaza oleh Pengadilan Internasional.**")
     if selected_news == "Berita 2":
+        with st.container(border=True):
+            st.markdown("""
+            <ul><li>&#8288;CNN Indonesia: Proses penjaringan calon Gubernur Sumatera Utara juga melibatkan nama-nama calon kuat lainnya, seperti Niksok Nababan dan Eddy Rahmayadi.</li>
+            <li>&#8288;Kompas: Ahok dimunculkan sebagai penantang Bobby Nasution yang didukung oleh Partai Gerindra dalam Pilkada Sumut 2024.</li>
+            <li>&#8288;Detik: DPD PDIP Sumut selalu mempertimbangkan nama Ahok dalam Pilgub Sumut dan akan menyesuaikan keputusan dengan dinamika politik yang ada.</li></ul>"""
+            , unsafe_allow_html=True)
         data1 = {
             'Bias': ['Left', 'Center', 'Right'],
-            'Percentage': [0, 100, 0]  # Contoh data pertama
+            'Percentage': [33.33, 66.67, 0]  # Contoh data pertama
         }
         
         data2 = {
             'Bias': ['Left', 'Center', 'Right'],
-            'Percentage': [50, 50, 0]  # Contoh data kedua
+            'Percentage': [66.67, 33.3, 0]  # Contoh data kedua
         }
     
         data3 = {
@@ -299,6 +305,9 @@ with st.container(border=True):
         
         # Menampilkan chart di Streamlit
         st.plotly_chart(fig)
+        st.text_area("", "Kompas cenderung netral dan memberikan informasi yang seimbang dari berbagai sumber.")
+        st.text_area("", "CNN Indonesia cenderung bersikap progresif dan mendukung keputusan partai dalam penyaringan calon.")
+        st.text_area("", "Detik cenderung konservatif dan menyoroti peran partai dalam keputusan politik.")
         with st.container(border=True):
             st.write("**Poin penting dari keempat ringkasan berita di atas adalah bahwa Basuki Tjahaja Purnama (Ahok) siap maju sebagai calon gubernur di Pilkada Sumatera Utara 2024. Namun, terdapat perbedaan dalam penekanan antara portal berita tersebut. CNN Indonesia dan Detik menyoroti bahwa Ahok mendapat dukungan dari DPD PDIP Sumut dan siap menunggu tugas dari partai, sementara Kompas menyoroti bahwa Ahok akan menjadi penantang dari Bobby Nasution yang didukung oleh Partai Gerindra. PDI-P masih mempertimbangkan tokoh lain selain Ahok untuk diusung dalam Pilkada Sumut. Di sisi lain, CNN Indonesia juga menekankan bahwa keputusan akhir ada di tangan partai, sementara Detik menyoroti bahwa DPD PDIP Sumut selalu mempertimbangkan nama Ahok dalam Pilgub Sumut dan akan menyempurnakan keputusan sesuai dinamika politik.**")
     if selected_news == "Berita 3":
