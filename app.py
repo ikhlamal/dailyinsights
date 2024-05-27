@@ -341,7 +341,7 @@ with st.container(border=True):
                         name=row['Bias'],
                         orientation='h',
                         marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
-                        hoverinfo='x'
+                        hoverinfo='x',
                         st.write("Detik cenderung menghadirkan berita secara netral tanpa bias politik, sehingga menampilkan berita tersebut dengan porsi yang seimbang berdasarkan fakta yang ada.")
                     ))
                 else:
