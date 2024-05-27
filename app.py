@@ -169,15 +169,27 @@ with st.container(border=True):
     fig = go.Figure()
     
     # Menambahkan segmen untuk masing-masing bias politik pada bar
-    for i, row in df.iterrows():
-        fig.add_trace(go.Bar(
-            x=[row['Percentage']], y=[row['Dataset']],
-            name=row['Bias'],
-            legendgroup=row['Bias'],  # Mengatur legend group agar hanya satu entri legenda yang ditampilkan untuk setiap warna
-            orientation='h',
-            marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
-            hoverinfo='x'
-        ))
+    for dataset in df['Dataset'].unique():
+        for i, row in df[df['Dataset'] == dataset].iterrows():
+            if i == 0:  # Hanya tambahkan legend untuk bar pertama dalam setiap dataset
+                fig.add_trace(go.Bar(
+                    x=[row['Percentage']], y=[dataset],
+                    name=dataset,
+                    legendgroup=dataset,  # Mengatur legend group agar hanya satu entri legenda yang ditampilkan untuk setiap dataset
+                    showlegend=True if dataset == df['Dataset'].iloc[0] else False,  # Hanya tampilkan legend untuk bar pertama dalam dataset pertama
+                    orientation='h',
+                    marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
+                    hoverinfo='x'
+                ))
+            else:
+                fig.add_trace(go.Bar(
+                    x=[row['Percentage']], y=[dataset],
+                    legendgroup=dataset,  # Mengatur legend group agar hanya satu entri legenda yang ditampilkan untuk setiap dataset
+                    showlegend=False,  # Tidak perlu menampilkan legend untuk bar-bar berikutnya dalam dataset yang sama
+                    orientation='h',
+                    marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
+                    hoverinfo='x'
+                ))
     
     # Memodifikasi layout untuk menghilangkan spasi antar bar dan menambahkan judul serta mengatur ukuran
     fig.update_layout(
