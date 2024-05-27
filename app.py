@@ -87,8 +87,7 @@ with st.container(border=True):
         st.subheader("Israel Terus Berusaha Mengalahkan Hamas di Gaza Meskipun Menimbulkan Banyak Korban")
     if selected_news == "Berita 2":
         st.subheader("Ahok Siap Maju Sebagai Calon Gubernur Sumatera Utara 2024")
-        st.markdown(f"""<ul><li>&#8288;Left:\n
-        Ketua DPD PDIP Sumatera Utara, Rapidin Simbolon, mengungkapkan bahwa Ahok siap maju di Pilgub Sumut 2024. Nama-nama calon kuat lainnya yang dipertimbangkan adalah Niksok Nababan, Eddy Rahmayadi, dan Musa Rajekshah. Proses penjaringan masih dalam tahap pembahasan di tingkat pusat.</li></ul>""", unsafe_allow_html=True)                        
+        st.markdown(f"<ul><li>&#8288;Left:\nKetua DPD PDIP Sumatera Utara, Rapidin Simbolon, mengungkapkan bahwa Ahok siap maju di Pilgub Sumut 2024. Nama-nama calon kuat lainnya yang dipertimbangkan adalah Niksok Nababan, Eddy Rahmayadi, dan Musa Rajekshah. Proses penjaringan masih dalam tahap pembahasan di tingkat pusat.</li></ul>", unsafe_allow_html=True)                        
     with st.container(border=True):
         col1, col2 = st.columns([2, 3])
         
