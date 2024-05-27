@@ -92,7 +92,7 @@ news_data = {
             "Mantan perwira CIA Alexander Yuk Ching Ma (71) mengaku bersalah memberikan informasi pertahanan kepada China setelah bekerja selama 7 tahun di CIA pada 1980an. Departemen Kehakiman AS menduga Ma memberikan informasi intelijen AS kepada China secara relatif besar dengan pertukaran puluhan ribu dolar. Meski Ma belum memberikan komentar, DOJ menyebut Ma harus bekerja sama dengan pemerintah AS dan menghadapi hukuman 10 tahun penjara federal.",
             "Mantan agen CIA, Alexander Yuk Ching Ma, mengaku bersalah menjadi mata-mata Cina dengan memberikan informasi rahasia pertahanan nasional AS pada 2001. Ma menerima uang tunai US$ 50.000 dari pihak intelijen Cina dan bekerja sama dengan saudara sedarahnya yang juga menjadi mata-mata Cina. Perjanjian pengakuan bersalah akan membuat Ma dipenjara hingga 10 tahun jika diterima oleh pengadilan.",
         ],
-        "sentiment": ["Netral", "Negatif", "Negatif"],
+        "sentiment": ["Negatif", "Negatif", "Negatif"],
     }
 }
 
