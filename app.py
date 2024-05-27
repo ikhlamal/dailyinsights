@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 from PIL import Image
 import requests
 from io import BytesIO
@@ -141,6 +142,17 @@ with st.container(border=True):
                         st.error(news["sentiment"][i])
                     elif news["sentiment"][i] == "Positif":
                         st.success(news["sentiment"][i])
+    
+    data = {
+        'Bias': ['Left', 'Center', 'Right'],
+        'Percentage': [40, 35, 25]  # Contoh data, sesuaikan dengan data Anda
+    }
+
+    # Membuat DataFrame
+    df = pd.DataFrame(data)
+    
+    # Menampilkan bar chart
+    st.bar_chart(df.set_index('Bias'))
     
     if selected_news == "Berita 1":
         with st.container(border=True):
