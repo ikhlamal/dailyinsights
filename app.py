@@ -145,7 +145,6 @@ with st.container(border=True):
     
     import plotly.graph_objects as go
     
-
     # Data persentase distribusi bias politik
     data1 = {
         'Bias': ['Left', 'Center', 'Right'],
@@ -174,6 +173,7 @@ with st.container(border=True):
         for i, row in df[df['Dataset'] == dataset].iterrows():
             # Tambahkan legenda hanya untuk dataset pertama
             showlegend = True if dataset == df['Dataset'].unique()[0] else False
+            # Hilangkan legenda untuk dataset kedua
             if dataset == 'Dataset 2':
                 showlegend = False
             fig.add_trace(go.Bar(
