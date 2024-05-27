@@ -303,12 +303,11 @@ with st.container(border=True):
             st.write("**Poin penting dari keempat ringkasan berita di atas adalah bahwa Basuki Tjahaja Purnama (Ahok) siap maju sebagai calon gubernur di Pilkada Sumatera Utara 2024. Namun, terdapat perbedaan dalam penekanan antara portal berita tersebut. CNN Indonesia dan Detik menyoroti bahwa Ahok mendapat dukungan dari DPD PDIP Sumut dan siap menunggu tugas dari partai, sementara Kompas menyoroti bahwa Ahok akan menjadi penantang dari Bobby Nasution yang didukung oleh Partai Gerindra. PDI-P masih mempertimbangkan tokoh lain selain Ahok untuk diusung dalam Pilkada Sumut. Di sisi lain, CNN Indonesia juga menekankan bahwa keputusan akhir ada di tangan partai, sementara Detik menyoroti bahwa DPD PDIP Sumut selalu mempertimbangkan nama Ahok dalam Pilgub Sumut dan akan menyempurnakan keputusan sesuai dinamika politik.**")
     if selected_news == "Berita 3":
         with st.container(border=True):
-            st.markdown(f"""
+            st.markdown("""
             <ul><li>&#8288;Detik: Ma diduga menerima uang tunai sebesar US$ 50.000 dari agen intelijen China.</li>
             <li>&#8288;CNBC Indonesia: DOJ menyebut Ma harus bekerja sama dengan pemerintah AS dan menghadapi hukuman 10 tahun penjara federal.</li>
-            <li>&#8288;Tempo: Perjanjian pengakuan bersalah akan membuat Ma dipenjara hingga 10 tahun jika diterima oleh pengadilan.</li></ul>
+            <li>&#8288;Tempo: Perjanjian pengakuan bersalah akan membuat Ma dipenjara hingga 10 tahun jika diterima oleh pengadilan.</li></ul>"""
             , unsafe_allow_html=True)
-            """)
         data1 = {
             'Bias': ['Left', 'Center', 'Right'],
             'Percentage': [33.3, 16.7, 50]
