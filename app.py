@@ -113,7 +113,11 @@ with st.container(border=True):
         st.text_area("Left", "Ketua DPD PDIP Sumatera Utara, Rapidin Simbolon, mengungkapkan bahwa Ahok siap maju di Pilgub Sumut 2024. Nama-nama calon kuat lainnya yang dipertimbangkan adalah Niksok Nababan, Eddy Rahmayadi, dan Musa Rajekshah. Proses penjaringan masih dalam tahap pembahasan di tingkat pusat.")                        
         st.text_area("Center", "Ketua DPD PDI-P Sumatera Utara menyatakan bahwa Ahok siap maju sebagai calon gubernur di Pilkada Sumatera Utara 2024. Ahok dimunculkan sebagai penantang dari Bobby Nasution, yang didukung oleh Partai Gerindra. PDI-P membuka kerja sama dengan berbagai partai politik dalam pemilihan calon.")
         st.text_area("Right", "Basuki Tjahaja Purnama alias Ahok siap maju dalam Pilgub Sumut 2024 setelah dorongan dari DPD PDIP Sumut. Ahok menyerahkan langkah politiknya pada keputusan partai dan DPD PDIP Sumut selalu mempertimbangkan namanya dalam Pilgub Sumut.")
-        
+    if selected_news == "Berita 3":
+        st.subheader("Mantan Agen CIA Mengaku Bersalah Jadi Mata-mata Cina")
+        st.text_area("Left", "Mantan agen CIA Alexander Yuk Ching Ma mengaku bersalah menjadi mata-mata China dengan memberikan informasi rahasia pertahanan AS kepada otoritas Beijing. Departemen Kehakiman AS menyebut bahwa Ma menerima uang tunai sebesar US$ 50.000 dari agen intelijen China. Perjanjian pengakuan bersalah akan membuat Ma dipenjara hingga 10 tahun jika diterima oleh pengadilan.")                        
+        st.text_area("Center", "Mantan agen CIA Alexander Yuk Ching Ma mengaku bersalah memberikan informasi pertahanan kepada China setelah bekerja selama 7 tahun di CIA pada 1980an. Meski Ma belum memberikan komentar, DOJ menyebut Ma harus bekerja sama dengan pemerintah AS dan menghadapi hukuman 10 tahun penjara federal. Departemen Kehakiman AS menduga Ma memberikan informasi intelijen AS kepada China secara relatif besar dengan pertukaran puluhan ribu dolar.")
+        st.text_area("Right", "Mantan agen CIA Alexander Yuk Ching Ma mengaku bersalah menjadi mata-mata Cina dengan memberikan informasi rahasia pertahanan nasional AS pada 2001. Ma menerima uang tunai US$ 50.000 dari pihak intelijen Cina dan bekerja sama dengan saudara sedarahnya yang juga menjadi mata-mata Cina. Perjanjian pengakuan bersalah akan membuat Ma dipenjara hingga 10 tahun jika diterima oleh pengadilan.")  
     with st.container(border=True):
         col1, col2 = st.columns([2, 3])
         
@@ -297,4 +301,69 @@ with st.container(border=True):
         st.plotly_chart(fig)
         with st.container(border=True):
             st.write("**Poin penting dari keempat ringkasan berita di atas adalah bahwa Basuki Tjahaja Purnama (Ahok) siap maju sebagai calon gubernur di Pilkada Sumatera Utara 2024. Namun, terdapat perbedaan dalam penekanan antara portal berita tersebut. CNN Indonesia dan Detik menyoroti bahwa Ahok mendapat dukungan dari DPD PDIP Sumut dan siap menunggu tugas dari partai, sementara Kompas menyoroti bahwa Ahok akan menjadi penantang dari Bobby Nasution yang didukung oleh Partai Gerindra. PDI-P masih mempertimbangkan tokoh lain selain Ahok untuk diusung dalam Pilkada Sumut. Di sisi lain, CNN Indonesia juga menekankan bahwa keputusan akhir ada di tangan partai, sementara Detik menyoroti bahwa DPD PDIP Sumut selalu mempertimbangkan nama Ahok dalam Pilgub Sumut dan akan menyempurnakan keputusan sesuai dinamika politik.**")
+    if selected_news == "Berita 3":
+        data1 = {
+            'Bias': ['Left', 'Center', 'Right'],
+            'Percentage': [33.3, 0, 66.7]  # Contoh data pertama
+        }
+        
+        data2 = {
+            'Bias': ['Left', 'Center', 'Right'],
+            'Percentage': [0, 66.7, 33.3]  # Contoh data kedua
+        }
     
+        data3 = {
+            'Bias': ['Left', 'Center', 'Right'],
+            'Percentage': [33.3, 0, 66.7]
+        }
+        
+        # Gabungkan kedua dataset ke dalam satu dataset tunggal dengan menambahkan kolom tambahan 'Dataset'
+        df1 = pd.DataFrame(data1)
+        df1['Dataset'] = 'Tempo'
+        
+        df2 = pd.DataFrame(data2)
+        df2['Dataset'] = 'CNBC Indonesia'
+    
+        df3 = pd.DataFrame(data3)
+        df3['Dataset'] = 'Detik'
+        
+        df = pd.concat([df1, df2, df3])
+        
+        # Membuat plotly figure
+        fig = go.Figure()
+        
+        # Menambahkan segmen untuk masing-masing bias politik pada bar
+        for dataset in df['Dataset'].unique():
+            for i, row in df[df['Dataset'] == dataset].iterrows():
+                if dataset == 'Kompas':
+                    fig.add_trace(go.Bar(
+                        x=[row['Percentage']], y=[dataset],
+                        name=row['Bias'],                
+                        orientation='h',
+                        marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
+                        hoverinfo='x'
+                    ))
+                else:
+                    fig.add_trace(go.Bar(
+                        x=[row['Percentage']], y=[dataset],
+                        showlegend=False,
+                        orientation='h',
+                        marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
+                        hoverinfo='x'
+                    ))
+        
+        # Memodifikasi layout untuk menghilangkan spasi antar bar dan menambahkan judul serta mengatur ukuran
+        fig.update_layout(
+            barmode='stack',
+            title='Distribusi Bias Politik',
+            xaxis=dict(title='Persentase', range=[0, 100]),
+            yaxis=dict(title=''),
+            showlegend=True,
+            height=400,
+            margin=dict(l=0, r=0, t=30, b=0)
+        )
+        
+        # Menampilkan chart di Streamlit
+        st.plotly_chart(fig)
+        with st.container(border=True):
+            st.write("**Poin penting yang menjadi titik fokus dari ketiga portal berita di atas adalah bahwa mantan agen CIA Alexander Yuk Ching Ma mengaku bersalah menjadi mata-mata China dengan memberikan informasi rahasia pertahanan AS kepada otoritas Beijing. Perbedaan antara portal berita tersebut terletak pada detail dari tindakan Ma, jumlah uang yang diterima dari agen intelijen China, dan informasi tambahan mengenai kemungkinan hukuman yang akan dihadapi Ma. Selain itu, setiap portal berita juga menyajikan informasi yang sedikit berbeda mengenai latar belakang serta hubungan Ma dengan saudara sedarahnya yang juga terlibat dalam kegiatan mata-mata.**")    
