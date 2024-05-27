@@ -85,9 +85,10 @@ news = news_data[selected_news]
 with st.container(border=True):
     if selected_news == "Berita 1":
         st.subheader("Israel Terus Berusaha Mengalahkan Hamas di Gaza Meskipun Menimbulkan Banyak Korban")
+        st.write("""
     if selected_news == "Berita 2":
         st.subheader("Ahok Siap Maju Sebagai Calon Gubernur Sumatera Utara 2024")
-    
+        st.markdown(f"<ul><li>&#8288;Left</li></ul>", unsafe_allow_html=True)                        
     with st.container(border=True):
         col1, col2 = st.columns([2, 3])
         
