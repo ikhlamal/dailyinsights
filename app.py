@@ -168,7 +168,7 @@ with st.container(border=True):
                         st.error(news["sentiment"][i])
                     elif news["sentiment"][i] == "Positif":
                         st.success(news["sentiment"][i])
-        st.write("**Fakta**")
+    st.write("**Fakta**")
     
     if selected_news == "Berita 1":
         with st.container(border=True):
