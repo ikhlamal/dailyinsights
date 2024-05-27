@@ -174,6 +174,7 @@ with st.container(border=True):
             fig.add_trace(go.Bar(
                 x=[row['Percentage']], y=[dataset],
                 name=row['Bias'],
+                legendgroup=row['Bias'],  # Mengatur legend group agar hanya satu entri legenda yang ditampilkan untuk setiap warna
                 orientation='h',
                 marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
                 hoverinfo='x'
@@ -185,7 +186,7 @@ with st.container(border=True):
         title='Distribusi Bias Politik',
         xaxis=dict(title='Persentase', range=[0, 100]),
         yaxis=dict(title=''),
-        showlegend=False,
+        showlegend=True,
         height=400,
         margin=dict(l=0, r=0, t=30, b=0)
     )
