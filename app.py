@@ -178,7 +178,7 @@ with st.container(border=True):
     # Menambahkan segmen untuk masing-masing bias politik pada bar
     for dataset in df['Dataset'].unique():
         for i, row in df[df['Dataset'] == dataset].iterrows():
-            if dataset == 'Dataset 1':
+            if dataset == 'Kompas':
                 fig.add_trace(go.Bar(
                     x=[row['Percentage']], y=[dataset],
                     name=row['Bias'],
