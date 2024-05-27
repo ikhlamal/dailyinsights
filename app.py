@@ -145,6 +145,7 @@ with st.container(border=True):
     
     import plotly.graph_objects as go
     
+
     # Data persentase distribusi bias politik
     data1 = {
         'Bias': ['Left', 'Center', 'Right'],
@@ -171,15 +172,9 @@ with st.container(border=True):
     # Menambahkan segmen untuk masing-masing bias politik pada bar
     for dataset in df['Dataset'].unique():
         for i, row in df[df['Dataset'] == dataset].iterrows():
-            # Tambahkan legenda hanya untuk dataset pertama
-            showlegend = True if dataset == df['Dataset'].unique()[0] else False
-            # Hilangkan legenda untuk dataset kedua
-            if dataset == 'Dataset 2':
-                showlegend = False
             fig.add_trace(go.Bar(
                 x=[row['Percentage']], y=[dataset],
-                name=row['Bias'] if showlegend else None,  # Hanya tampilkan label legenda untuk dataset pertama
-                legendgroup=dataset,  # Mengatur legend group agar hanya satu entri legenda yang ditampilkan untuk setiap dataset
+                name=row['Bias'] if dataset == 'Dataset 1' else None,  # Hanya menampilkan nama legenda untuk Dataset 1
                 orientation='h',
                 marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
                 hoverinfo='x'
@@ -191,7 +186,7 @@ with st.container(border=True):
         title='Distribusi Bias Politik',
         xaxis=dict(title='Persentase', range=[0, 100]),
         yaxis=dict(title=''),
-        showlegend=True,  # Tampilkan legenda hanya sekali
+        showlegend=True,
         height=400,
         margin=dict(l=0, r=0, t=30, b=0)
     )
