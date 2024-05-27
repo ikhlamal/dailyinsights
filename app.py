@@ -314,7 +314,12 @@ with st.container(border=True):
         
         # Menampilkan chart di Streamlit
         st.plotly_chart(fig)
-        st.text_area("", "Detik cenderung konservatif dan menyoroti peran partai dalam keputusan politik.")
+        st.text_area("", 
+        """
+        - Detik cenderung konservatif dan menyoroti peran partai dalam keputusan politik.
+        - CNN Indonesia cenderung bersikap progresif dan mendukung keputusan partai dalam penyaringan calon.
+        - Kompas cenderung netral dan memberikan informasi yang seimbang dari berbagai sumber.
+        """)
         st.text_area("", "CNN Indonesia cenderung bersikap progresif dan mendukung keputusan partai dalam penyaringan calon.")
         st.text_area("", "Kompas cenderung netral dan memberikan informasi yang seimbang dari berbagai sumber.")
         with st.container(border=True):
