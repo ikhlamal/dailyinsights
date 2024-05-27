@@ -88,6 +88,9 @@ with st.container(border=True):
     if selected_news == "Berita 2":
         st.subheader("Ahok Siap Maju Sebagai Calon Gubernur Sumatera Utara 2024")
         st.text_area("Left", "Ketua DPD PDIP Sumatera Utara, Rapidin Simbolon, mengungkapkan bahwa Ahok siap maju di Pilgub Sumut 2024. Nama-nama calon kuat lainnya yang dipertimbangkan adalah Niksok Nababan, Eddy Rahmayadi, dan Musa Rajekshah. Proses penjaringan masih dalam tahap pembahasan di tingkat pusat.")                        
+        st.text_area("Center", "Ketua DPD PDI-P Sumatera Utara menyatakan bahwa Ahok siap maju sebagai calon gubernur di Pilkada Sumatera Utara 2024. Ahok dimunculkan sebagai penantang dari Bobby Nasution, yang didukung oleh Partai Gerindra. PDI-P membuka kerja sama dengan berbagai partai politik dalam pemilihan calon.")
+        st.text_area("Right", "Basuki Tjahaja Purnama alias Ahok siap maju dalam Pilgub Sumut 2024 setelah dorongan dari DPD PDIP Sumut. Ahok menyerahkan langkah politiknya pada keputusan partai dan DPD PDIP Sumut selalu mempertimbangkan namanya dalam Pilgub Sumut.")
+        
     with st.container(border=True):
         col1, col2 = st.columns([2, 3])
         
