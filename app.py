@@ -397,8 +397,12 @@ with st.container(border=True):
         
         # Menampilkan chart di Streamlit
         st.plotly_chart(fig)
-        st.text_area("", "Detik cenderung menghadirkan berita secara netral tanpa bias politik, sehingga menampilkan berita tersebut dengan porsi yang seimbang berdasarkan fakta yang ada.")
-        st.text_area("", "CNBC Indonesia lebih cenderung pada pemberitaan yang berfokus pada aspek bisnis dan ekonomi, sehingga menyajikan berita dengan sudut pandang yang lebih netral dan berfokus pada fakta-fakta yang ada.")
-        st.text_area("", "Tempo cenderung memiliki sudut pandang yang lebih beragam dalam pemberitaan, namun dalam kasus ini menekankan pada aspek hukum dan keamanan sehingga memuat berita mengenai kasus ini dengan beragam perspektif sesuai dengan fakta yang ada.")
+        with st.container(border=True):
+            st.write( 
+                """
+                - Detik cenderung menghadirkan berita secara netral tanpa bias politik, sehingga menampilkan berita tersebut dengan porsi yang seimbang berdasarkan fakta yang ada.
+                - CNBC Indonesia lebih cenderung pada pemberitaan yang berfokus pada aspek bisnis dan ekonomi, sehingga menyajikan berita dengan sudut pandang yang lebih netral dan berfokus pada fakta-fakta yang ada.
+                - Tempo cenderung memiliki sudut pandang yang lebih beragam dalam pemberitaan, namun dalam kasus ini menekankan pada aspek hukum dan keamanan sehingga memuat berita mengenai kasus ini dengan beragam perspektif sesuai dengan fakta yang ada.
+                """)
         with st.container(border=True):
             st.write("**Poin penting yang menjadi titik fokus dari ketiga portal berita di atas adalah bahwa mantan agen CIA Alexander Yuk Ching Ma mengaku bersalah menjadi mata-mata China dengan memberikan informasi rahasia pertahanan AS kepada otoritas Beijing. Perbedaan antara portal berita tersebut terletak pada detail dari tindakan Ma, jumlah uang yang diterima dari agen intelijen China, dan informasi tambahan mengenai kemungkinan hukuman yang akan dihadapi Ma. Selain itu, setiap portal berita juga menyajikan informasi yang sedikit berbeda mengenai latar belakang serta hubungan Ma dengan saudara sedarahnya yang juga terlibat dalam kegiatan mata-mata.**")    
