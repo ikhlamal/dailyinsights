@@ -170,7 +170,7 @@ with st.container(border=True):
     df3 = pd.DataFrame(data3)
     df3['Dataset'] = 'Detik'
     
-    df = pd.concat([df1, df2])
+    df = pd.concat([df1, df2, df3])
     
     # Membuat plotly figure
     fig = go.Figure()
