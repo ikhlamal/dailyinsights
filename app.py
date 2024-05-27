@@ -145,6 +145,7 @@ with st.container(border=True):
     
     import plotly.graph_objects as go
     
+
     # Data persentase distribusi bias politik
     data1 = {
         'Bias': ['Left', 'Center', 'Right'],
@@ -171,25 +172,16 @@ with st.container(border=True):
     # Menambahkan segmen untuk masing-masing bias politik pada bar
     for dataset in df['Dataset'].unique():
         for i, row in df[df['Dataset'] == dataset].iterrows():
-            if i == 0:  # Hanya tambahkan legend untuk bar pertama dalam setiap dataset
-                fig.add_trace(go.Bar(
-                    x=[row['Percentage']], y=[dataset],
-                    name=dataset,
-                    legendgroup=dataset,  # Mengatur legend group agar hanya satu entri legenda yang ditampilkan untuk setiap dataset
-                    showlegend=True if dataset == df['Dataset'].iloc[0] else False,  # Hanya tampilkan legend untuk bar pertama dalam dataset pertama
-                    orientation='h',
-                    marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
-                    hoverinfo='x'
-                ))
-            else:
-                fig.add_trace(go.Bar(
-                    x=[row['Percentage']], y=[dataset],
-                    legendgroup=dataset,  # Mengatur legend group agar hanya satu entri legenda yang ditampilkan untuk setiap dataset
-                    showlegend=False,  # Tidak perlu menampilkan legend untuk bar-bar berikutnya dalam dataset yang sama
-                    orientation='h',
-                    marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
-                    hoverinfo='x'
-                ))
+            # Tambahkan legenda hanya untuk dataset pertama
+            showlegend = True if dataset == df['Dataset'].unique()[0] else False
+            fig.add_trace(go.Bar(
+                x=[row['Percentage']], y=[dataset],
+                name=row['Bias'] if showlegend else None,  # Hanya tampilkan label legenda untuk dataset pertama
+                legendgroup=dataset,  # Mengatur legend group agar hanya satu entri legenda yang ditampilkan untuk setiap dataset
+                orientation='h',
+                marker=dict(color='blue' if row['Bias'] == 'Left' else 'green' if row['Bias'] == 'Center' else 'red'),
+                hoverinfo='x'
+            ))
     
     # Memodifikasi layout untuk menghilangkan spasi antar bar dan menambahkan judul serta mengatur ukuran
     fig.update_layout(
@@ -197,7 +189,7 @@ with st.container(border=True):
         title='Distribusi Bias Politik',
         xaxis=dict(title='Persentase', range=[0, 100]),
         yaxis=dict(title=''),
-        showlegend=True,
+        showlegend=True,  # Tampilkan legenda hanya sekali
         height=400,
         margin=dict(l=0, r=0, t=30, b=0)
     )
