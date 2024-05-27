@@ -211,6 +211,7 @@ with st.container(border=True):
         
         # Menampilkan chart di Streamlit
         st.plotly_chart(fig)
+        st.text_area("", "CNN cenderung memiliki sudut pandang yang lebih pro-Palestina, AP News cenderung netral namun memberikan liputan seimbang antara kedua belah pihak, sementara Aljazeera cenderung memiliki sudut pandang yang lebih kritis terhadap tindakan Israel.")
         with st.container(border=True):
             st.write("**Poin penting yang menjadi titik fokus dari ketiga portal berita tersebut adalah situasi konflik di Gaza antara Israel dan Hamas yang berlangsung dengan intensitas tinggi. Namun, terdapat perbedaan pemberitaan antara ketiga portal berita tersebut dalam hal fokus dan sudut pandangnya. CNN lebih menekankan pada jumlah korban jiwa dan situasi kemanusiaan yang memburuk di Gaza, Associated Press lebih fokus pada perlawanan Hamas dan tantangan yang dihadapi oleh Israel dalam menaklukkan mereka, sedangkan Al Jazeera lebih menyoroti tindakan Israel yang terus melakukan serangan meskipun diperintahkan untuk menghentikan operasi militer di Gaza oleh Pengadilan Internasional.**")
     if selected_news == "Berita 2":
